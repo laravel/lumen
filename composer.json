@@ -23,11 +23,5 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://airship.laravel.com"
-        }
-    ]
+    }
 }
