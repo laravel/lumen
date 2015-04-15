@@ -29,7 +29,7 @@ $app = require __DIR__.'/bootstrap/app.php';
 */
 
 $kernel = $app->make(
-	'Illuminate\Contracts\Console\Kernel'
+    'Illuminate\Contracts\Console\Kernel'
 );
 
 exit($kernel->handle(new ArgvInput, new ConsoleOutput));
