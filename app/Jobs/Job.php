@@ -1,4 +1,6 @@
-<?php namespace App\Jobs;
+<?php
+
+namespace app\Jobs;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
