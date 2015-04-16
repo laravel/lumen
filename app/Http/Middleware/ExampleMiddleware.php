@@ -2,7 +2,8 @@
 
 use Closure;
 
-class ExampleMiddleware {
+class ExampleMiddleware
+{
 
     /**
      * Handle an incoming request.
