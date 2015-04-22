@@ -17,6 +17,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Laravel\Lumen\Application;
 
+$app->useStoragePath(realpath(__DIR__.'/../storage/'));
+
 // $app->withFacades();
 
 // $app->withEloquent();
