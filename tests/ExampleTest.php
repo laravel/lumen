@@ -12,7 +12,6 @@ class ExampleTest extends TestCase {
         $response = $this->call('GET', '/');
 
         $this->assertResponseOk();
-        $this->assertEquals('Hello World', $response->getContent());
     }
 
 }
