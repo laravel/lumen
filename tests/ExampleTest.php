@@ -1,7 +1,7 @@
 <?php
 
-class ExampleTest extends TestCase {
-
+class ExampleTest extends TestCase
+{
     /**
      * A basic test example.
      *
@@ -9,9 +9,7 @@ class ExampleTest extends TestCase {
      */
     public function testBasicExample()
     {
-        $response = $this->call('GET', '/');
-
-        $this->assertResponseOk();
+        $this->visit('/')
+             ->see('Lumen.');
     }
-
 }
