@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/lumen-framework": "5.0.*",
+        "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0"
     },
     "require-dev": {
@@ -26,5 +26,6 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "minimum-stability": "dev"
 }
