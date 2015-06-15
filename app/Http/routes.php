@@ -11,6 +11,15 @@
 |
 */
 
+class SomeEvent implements Illuminate\Contracts\Broadcasting\ShouldBroadcast {
+	public $something = 'taylor';
+	public function broadcastOn()
+	{
+		return ['test-channel'];
+	}
+}
+
 $app->get('/', function() use ($app) {
+	event(new SomeEvent);
     return $app->welcome();
 });
