@@ -5,6 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "php": ">=5.5.9",
         "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0"
     },
