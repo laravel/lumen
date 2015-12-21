@@ -11,7 +11,6 @@ class ExampleJob extends Job
      */
     public function __construct()
     {
-
     }
 
     /**
