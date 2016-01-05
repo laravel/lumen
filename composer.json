@@ -10,6 +10,7 @@
         "vlucas/phpdotenv": "~2.0"
     },
     "require-dev": {
+        "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "~4.0"
     },
     "autoload": {
@@ -19,7 +20,8 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/"
+            "tests/",
+            "database/"
         ]
     },
     "minimum-stability": "dev"
