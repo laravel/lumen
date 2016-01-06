@@ -4,8 +4,6 @@ namespace App\Events;
 
 class ExampleEvent extends Event
 {
-    use SerializesModels;
-
     /**
      * Create a new event instance.
      *
