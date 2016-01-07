@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/lumen-framework": "5.2.*",
-        "vlucas/phpdotenv": "~2.0"
+        "vlucas/phpdotenv": "~2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
