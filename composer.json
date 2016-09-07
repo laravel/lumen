@@ -11,7 +11,8 @@
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
-        "phpunit/phpunit": "~5.0"
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "~0.9"
     },
     "autoload": {
         "psr-4": {
@@ -24,6 +25,11 @@
             "database/"
         ]
     },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
