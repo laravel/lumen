@@ -1,0 +1,11 @@
+image: phpunit/phpunit
+
+pipelines:
+  default:
+    - step:
+        script:
+          - php --version
+          - apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add redis
+          - redis-server --daemonize yes
+          - composer install
+          - ./vendor/bin/phpunit
