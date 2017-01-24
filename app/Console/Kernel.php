@@ -8,6 +8,13 @@ use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
+     * Are facade aliases enabled?
+     *
+     * @var bool
+     */
+    protected $aliases = true;
+
+    /**
      * The Artisan commands provided by your application.
      *
      * @var array
