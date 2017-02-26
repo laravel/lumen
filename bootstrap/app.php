@@ -23,6 +23,8 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
+$app->useStoragePath(realpath(__DIR__.'/../storage/'));
+
 // $app->withFacades();
 
 // $app->withEloquent();
