@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Middleware;
+
 use Closure;
 use Carbon\Carbon;
 use Illuminate\Cache\RateLimiter;
 use Symfony\Component\HttpFoundation\Response;
+
 class ThrottleRequests
 {
     /**
@@ -22,6 +25,7 @@ class ThrottleRequests
     {
         $this->limiter = $limiter;
     }
+
     /**
      * Handle an incoming request.
      *
@@ -39,11 +43,13 @@ class ThrottleRequests
         }
         $this->limiter->hit($key, $decayMinutes);
         $response = $next($request);
+
         return $this->addHeaders(
             $response, $maxAttempts,
             $this->calculateRemainingAttempts($key, $maxAttempts)
         );
     }
+
     /**
      * Resolve request signature.
      *
@@ -54,11 +60,12 @@ class ThrottleRequests
     {
         return sha1(
             $request->method() .
-            '|' . $request->server('SERVER_NAME') .
-            '|' . $request->path() .
-            '|' . $request->ip()
+            '|'.$request->server('SERVER_NAME') .
+            '|'.$request->path() .
+            '|'.$request->ip()
         );
     }
+
     /**
      * Create a 'too many attempts' response.
      *
@@ -70,12 +77,14 @@ class ThrottleRequests
     {
         $response = new Response('Too Many Attempts.', 429);
         $retryAfter = $this->limiter->availableIn($key);
+
         return $this->addHeaders(
             $response, $maxAttempts,
             $this->calculateRemainingAttempts($key, $maxAttempts, $retryAfter),
             $retryAfter
         );
     }
+
     /**
      * Add the limit header information to the given response.
      *
@@ -96,8 +105,10 @@ class ThrottleRequests
             $headers['X-RateLimit-Reset'] = Carbon::now()->getTimestamp() + $retryAfter;
         }
         $response->headers->add($headers);
+
         return $response;
     }
+
     /**
      * Calculate the number of remaining attempts.
      *
@@ -111,6 +122,8 @@ class ThrottleRequests
         if (is_null($retryAfter)) {
             return $this->limiter->retriesLeft($key, $maxAttempts);
         }
+
         return 0;
     }
+
 }
