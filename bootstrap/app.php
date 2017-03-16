@@ -67,9 +67,9 @@ $app->singleton(
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
-//$app->routeMiddleware([
-//    'throttle' => App\Http\Middleware\ThrottleRequests::class,
-//]);
+// $app->routeMiddleware([
+//     'throttle' => App\Http\Middleware\ThrottleRequests::class,
+// ]);
 
 /*
 |--------------------------------------------------------------------------
