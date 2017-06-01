@@ -27,7 +27,8 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
+            "php -r \"copy('.env.example', '.env');\"",
+            "php -r \"file_put_contents('.env', str_replace('APP_KEY=', 'APP_KEY=' . md5(microtime()), file_get_contents('.env')));\""
         ]
     },
     "minimum-stability": "dev",
