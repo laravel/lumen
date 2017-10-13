@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.0",
         "laravel/lumen-framework": "5.5.*",
         "vlucas/phpdotenv": "~2.2"
     },
@@ -32,5 +32,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "optimize-autoloader": true
+    "config": {
+        "optimize-autoloader": true
+    }
 }
