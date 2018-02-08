@@ -27,12 +27,14 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
