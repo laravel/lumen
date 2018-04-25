@@ -3,8 +3,8 @@
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
@@ -21,7 +21,7 @@ trait ApiExceptionHandlerTrait
     {
         switch (true) {
             case $this->is403Exception($e):
-                $response = $this->jsonExceptionResponseWithDefaultMessage(403, $e, "Forbidden");
+                $response = $this->jsonExceptionResponseWithDefaultMessage(403, $e, 'Forbidden');
                 break;
             case $this->is404Exception($e):
                 $response = $this->jsonExceptionResponseWithDefaultMessage(404, $e, 'Not found');
@@ -62,13 +62,21 @@ trait ApiExceptionHandlerTrait
      */
     private function is404Exception(\Exception $e) : bool
     {
-        if ($e->getCode() == 404) return true;
+        if ($e->getCode() == 404) {
+            return true;
+        }
 
-        if ($this->getStatusExceptionIfExist($e) == 404) return true;
+        if ($this->getStatusExceptionIfExist($e) == 404) {
+            return true;
+        }
 
-        if ($e instanceof ModelNotFoundException) return true;
+        if ($e instanceof ModelNotFoundException) {
+            return true;
+        }
 
-        if ($e instanceof MethodNotAllowedHttpException) return true;
+        if ($e instanceof MethodNotAllowedHttpException) {
+            return true;
+        }
 
         return false;
     }
@@ -79,9 +87,13 @@ trait ApiExceptionHandlerTrait
      */
     private function is403Exception(\Exception $e) : bool
     {
-        if ($e->getCode() == 403) return true;
+        if ($e->getCode() == 403) {
+            return true;
+        }
 
-        if ($this->getStatusExceptionIfExist($e) == 403) return true;
+        if ($this->getStatusExceptionIfExist($e) == 403) {
+            return true;
+        }
 
         return false;
     }
@@ -92,7 +104,9 @@ trait ApiExceptionHandlerTrait
      */
     private function getStatusExceptionIfExist(\Exception $e) : ?int
     {
-        if (!method_exists ($e, 'getStatusCode')) return null;
+        if (!method_exists ($e, 'getStatusCode')) {
+            return null;
+        }
 
         return $e->getStatusCode();
     }
@@ -120,7 +134,7 @@ trait ApiExceptionHandlerTrait
     {
         $errorInfo = $this->getErrorInfo($errorMessage, $statusCode, $e);
 
-        return response()->json(["error" => $errorInfo], $statusCode);
+        return response()->json(['error' => $errorInfo], $statusCode);
     }
 
     /**
