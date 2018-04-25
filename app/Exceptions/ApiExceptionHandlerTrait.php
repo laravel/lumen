@@ -104,7 +104,7 @@ trait ApiExceptionHandlerTrait
      */
     private function getStatusExceptionIfExist(\Exception $e) : ?int
     {
-        if (! method_exists ($e, 'getStatusCode')) {
+        if (! method_exists($e, 'getStatusCode')) {
             return null;
         }
 
