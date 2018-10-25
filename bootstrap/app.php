@@ -84,6 +84,19 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Load configuration files
+|--------------------------------------------------------------------------
+|
+| Here we can load any additional configuration files from the `config`
+| directory. Keep in mind, the config directory doesn't exist in you project
+| root path by default.
+|
+*/
+
+// $app->configure('services');
+
+/*
+|--------------------------------------------------------------------------
 | Load The Application Routes
 |--------------------------------------------------------------------------
 |
