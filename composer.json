@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.1.3",
+        "php": "^7.2",
         "laravel/lumen-framework": "^6.0"
     },
     "require-dev": {
