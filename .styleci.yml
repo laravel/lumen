@@ -5,8 +5,5 @@ php:
   disabled:
     - alpha_ordered_imports
     - unused_use
-  finder:
-    not-name:
-      - index.php
 js: true
 css: true
