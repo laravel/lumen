@@ -1,0 +1,12 @@
+php:
+  preset: laravel
+  enabled:
+    - length_ordered_imports
+  disabled:
+    - alpha_ordered_imports
+    - unused_use
+  finder:
+    not-name:
+      - index.php
+js: true
+css: true
