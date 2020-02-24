@@ -48,6 +48,19 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Register Config Files
+|--------------------------------------------------------------------------
+|
+| Now we will register the app.php config file. If the file exists in your
+| app's config directory we will load that, falling back to the default
+| version. You may register additional config files here, as needed.
+|
+*/
+
+$app->configure('app');
+
+/*
+|--------------------------------------------------------------------------
 | Register Middleware
 |--------------------------------------------------------------------------
 |
