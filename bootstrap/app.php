@@ -51,9 +51,9 @@ $app->singleton(
 | Register Config Files
 |--------------------------------------------------------------------------
 |
-| Now we will register the app.php config file. If the file exists in your
-| app's config directory we will load that, falling back to the default
-| version. You may register additional config files here, as needed.
+| Now we will register the "app" configuration file. If the file exists in
+| your configuration driectory it will be loaded; otherwise, we'll load
+| the default version. You may register other files below as needed.
 |
 */
 
