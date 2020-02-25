@@ -9,9 +9,9 @@
         "laravel/lumen-framework": "^6.0"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.4",
-        "phpunit/phpunit": "^8.0",
-        "mockery/mockery": "^1.0"
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.0"
     },
     "autoload": {
         "classmap": [
@@ -27,16 +27,16 @@
             "tests/"
         ]
     },
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
-    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
 }
