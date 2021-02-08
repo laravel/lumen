@@ -14,5 +14,49 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
+    return redirect()->route('test.route');
+});
+
+// API v1
+// SPLIT 3 GROUP FOR DEVELOPING
+/*$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+    // Security
+    $router->group(['prefix' => 'security', 'namespace' => 'Security'], function () use ($router) {
+        // Code start from here
+    });
+    // Owner
+    $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
+        // Code start from here
+    });
+    // Client
+    $router->group(['prefix' => 'owner', 'namespace' => 'Client'], function () use ($router) {
+        // Code start from here
+    });
+});*/
+
+// API v1 Security
+$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+    $router->group(['prefix' => 'security', 'namespace' => 'Security'], function () use ($router) {
+        $router->group(['prefix' => 'report'], function () use ($router) {
+            $router->get('/', ['uses' => 'ReportController@index', 'as' => 'security.report.index']);
+        });
+        $router->group(['prefix' => 'broadcast'], function () use ($router) {
+            $router->get('/', ['uses' => 'BroadcastController@index', 'as' => 'security.broadcast.index']);
+        });
+    });
+});
+
+// API v1 Owner
+$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+    $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
+        // Code start from here
+    });
+});
+
+// API v1 Client
+$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+    $router->group(['prefix' => 'owner', 'namespace' => 'Client'], function () use ($router) {
+        // Code start from here
+    });
 });
