@@ -15,7 +15,7 @@
 
 $router->get('/', function () use ($router) {
     // return $router->app->version();
-    return redirect()->route('test.route');
+    return redirect()->route('security.report.index');
 });
 
 // API v1
@@ -36,10 +36,11 @@ $router->get('/', function () use ($router) {
 });*/
 
 // API v1 Security
-$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'security', 'namespace' => 'Security'], function () use ($router) {
         $router->group(['prefix' => 'report'], function () use ($router) {
             $router->get('/', ['uses' => 'ReportController@index', 'as' => 'security.report.index']);
+            $router->post('/store', ['uses' => 'ReportController@store', 'as' => 'security.report.store']);
         });
         $router->group(['prefix' => 'broadcast'], function () use ($router) {
             $router->get('/', ['uses' => 'BroadcastController@index', 'as' => 'security.broadcast.index']);
