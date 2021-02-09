@@ -4,7 +4,7 @@ namespace App\Http\Controllers\v1\Security;
 
 use App\Http\Controllers\Controller;
 use App\Models\ResponseHandler;
-use App\Models\v1\Report;
+use App\Models\v1\People;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -24,8 +24,11 @@ class ReportController extends Controller
 	public function index()
 	{
         try {
-            $reports = Report::all();
-            dd($reports);
+            // Start code here
+            $result = People::with('user', 'security', 'customer')->get()->toArray();
+            
+            dd($result);
+
         } catch(\Exception $e){
             return $this->respHandler->requestError($e->getMessage());
         }
