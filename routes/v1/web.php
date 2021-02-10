@@ -61,3 +61,7 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($ro
         // Code start from here
     });
 });
+
+$router->get('/key', function() {
+    return \Illuminate\Support\Str::random(32);
+});
