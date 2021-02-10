@@ -49,14 +49,14 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 });
 
 // API v1 Owner
-$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
         // Code start from here
     });
 });
 
 // API v1 Client
-$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Client'], function () use ($router) {
         // Code start from here
     });
