@@ -14,14 +14,15 @@ class CreatePeoplesTable extends Migration
     public function up()
     {
         Schema::create('peoples', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
-            $table->datetime('birthdate')->nullable();
+            $table->date('birthdate')->nullable();
             $table->integer('age')->nullable();
             $table->enum('sex',['M','F'])->nullable();
-            $table->nullableTimestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

@@ -14,8 +14,6 @@ class ForeignKeys extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-            // $table->foreignId('id_people')->references('peoples');
-            // $table->foreignId('id_corporate')->references('corporates');
             $table->foreign('id_people')->references('id')->on('peoples');
             $table->foreign('id_corporate')->references('id')->on('corporates');
         });
@@ -40,7 +38,7 @@ class ForeignKeys extends Migration
         });
 
         Schema::table('site_schedules', function (Blueprint $table) {
-            $table->foreign('id_site')->references('id')->on('site_schedules');
+            $table->foreign('id_site')->references('id')->on('sites');
             $table->foreign('id_schedule')->references('id')->on('schedules');
         });
 

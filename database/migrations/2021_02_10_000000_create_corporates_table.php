@@ -14,13 +14,12 @@ class CreateCorporatesTable extends Migration
     public function up()
     {
         Schema::create('corporates', function (Blueprint $table) {
-
-            $table->increments('id');
+            $table->id();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->tinyInteger('is_owner')->default('0');
-            $table->nullableTimestamps();
-
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

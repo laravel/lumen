@@ -14,14 +14,15 @@ class CreateSitesTable extends Migration
     public function up()
     {
         Schema::create('sites', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_corporate')->unsigned();
+            $table->id();
+            $table->bigInteger('id_corporate')->unsigned();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->string('description')->nullable();
             $table->string('lat')->nullable();
             $table->string('long')->nullable();
-            $table->nullableTimestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

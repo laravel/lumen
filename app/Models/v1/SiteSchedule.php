@@ -3,9 +3,11 @@
 namespace App\Models\v1;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SiteSchedule extends Model
 {
+    use HasFactory;
     protected $table = 'site_schedules';
 
     public function site()

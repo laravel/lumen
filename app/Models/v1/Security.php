@@ -3,9 +3,11 @@
 namespace App\Models\v1;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Security extends Model
 {
+    use HasFactory;
     protected $table = 'securities';
 
     public function people()
