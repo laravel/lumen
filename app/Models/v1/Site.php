@@ -19,4 +19,9 @@ class Site extends Model
     {
     	return $this->hasMany('App\Models\v1\SiteSchedule', 'id_site', 'id');
     }
+
+    public function checkpoint()
+    {
+    	return $this->hasMany('App\Models\v1\Checkpoint', 'id_site', 'id');
+    }
 }

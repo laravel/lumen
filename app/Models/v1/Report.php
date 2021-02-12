@@ -10,8 +10,18 @@ class Report extends Model
     use HasFactory;
     protected $table = 'reports';
 
-    public function message()
+    public function site_schedule()
     {
-    	return $this->hasMany('App\Models\v1\Message', 'id_report', 'id');
+    	return $this->belongsTo('App\Models\v1\SiteSchedule', 'id_site_schedule', 'id');
+    }
+
+    public function security()
+    {
+    	return $this->belongsTo('App\Models\v1\Security', 'id_security_real', 'id');
+    }
+
+    public function report_detail()
+    {
+    	return $this->hasMany('App\Models\v1\ReportDetail', 'id_report', 'id');
     }
 }

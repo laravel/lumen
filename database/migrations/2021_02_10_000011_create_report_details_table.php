@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitesTable extends Migration
+class CreateReportDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateSitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sites', function (Blueprint $table) {
+        Schema::create('report_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_corporate')->unsigned();
-            $table->string('name')->nullable();
-            $table->string('address')->nullable();
-            $table->string('detail')->nullable();
+            $table->bigInteger('id_report')->unsigned();
+            $table->bigInteger('id_checkpoint')->unsigned();
+            $table->datetime('time')->nullable();
             $table->string('lat')->nullable();
             $table->string('long')->nullable();
             $table->timestamp('created_at')->useCurrent();
@@ -33,6 +32,6 @@ class CreateSitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('reports');
     }
 }

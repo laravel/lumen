@@ -15,13 +15,18 @@ class Security extends Model
     	return $this->hasOne('App\Models\v1\People', 'id', 'id_people');
     }
 
+    public function self_supervisor()
+    {
+    	return $this->belongsTo('App\Models\v1\Security', "id_supervisor", "id");
+    }
+
     public function supervisor()
     {
     	return $this->hasMany('App\Models\v1\Security', 'id', 'id_supervisor');
     }
 
-    public function self_supervisor()
+    public function report()
     {
-    	return $this->belongsTo('App\Models\v1\Security', "id_supervisor", "id");
+    	return $this->hasMany('App\Models\v1\Report', 'id_security_real', 'id');
     }
 }
