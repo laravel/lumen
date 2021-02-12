@@ -14,14 +14,15 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_security_schedule')->unsigned();
+            $table->id();
+            $table->bigInteger('id_security_schedule')->unsigned();
             $table->longText('content')->nullable();
             $table->datetime('time')->nullable();
             $table->string('lat')->nullable();
             $table->string('long')->nullable();
             $table->string('type')->nullable();
-            $table->nullableTimestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

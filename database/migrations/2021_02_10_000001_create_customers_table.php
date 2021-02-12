@@ -14,10 +14,11 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_people')->unsigned();
-            $table->integer('id_corporate')->unsigned();
-            $table->nullableTimestamps();
+            $table->id();
+            $table->bigInteger('id_people')->unsigned();
+            $table->bigInteger('id_corporate')->unsigned();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

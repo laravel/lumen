@@ -14,11 +14,12 @@ class CreateMessagesTable extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_report')->unsigned();
-            $table->integer('id_user')->unsigned();
+            $table->id();
+            $table->bigInteger('id_report')->unsigned();
+            $table->bigInteger('id_user')->unsigned();
             $table->string('message')->nullable();
-            $table->nullableTimestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
 
     }

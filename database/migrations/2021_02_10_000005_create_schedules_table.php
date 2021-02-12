@@ -14,11 +14,12 @@ class CreateSchedulesTable extends Migration
     public function up()
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->enum('day',['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'])->nullable();
             $table->time('start')->nullable();
             $table->time('end')->nullable();
-            $table->nullableTimestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

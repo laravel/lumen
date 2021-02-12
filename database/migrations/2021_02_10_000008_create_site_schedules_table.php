@@ -14,10 +14,11 @@ class CreateSiteSchedulesTable extends Migration
     public function up()
     {
         Schema::create('site_schedules', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_site')->unsigned();
-            $table->integer('id_schedule')->unsigned();
-            $table->nullableTimestamps();
+            $table->id();
+            $table->bigInteger('id_site')->unsigned();
+            $table->bigInteger('id_schedule')->unsigned();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

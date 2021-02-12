@@ -14,11 +14,12 @@ class CreateSecuritySchedulesTable extends Migration
     public function up()
     {
         Schema::create('security_schedules', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_sites_schedule')->unsigned();
-            $table->integer('id_security_plan')->unsigned();
-            $table->integer('id_security_real')->unsigned();
-            $table->nullableTimestamps();
+            $table->id();
+            $table->bigInteger('id_sites_schedule')->unsigned();
+            $table->bigInteger('id_security_plan')->unsigned();
+            $table->bigInteger('id_security_real')->unsigned();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
