@@ -15,9 +15,11 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_report')->unsigned();
+            $table->bigInteger('id_report_detail')->unsigned();
             $table->bigInteger('id_user')->unsigned();
             $table->string('message')->nullable();
+            $table->enum('type',['R','S'])->default('R'); // R = Reports, S = SOS
+            $table->enum('sos_to',['Owner','Client'])->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });

@@ -10,9 +10,9 @@ class Message extends Model
     use HasFactory;
     protected $table = 'messages';
     
-    public function report()
+    public function report_detail()
     {
-    	return $this->belongsTo('App\Models\v1\Report', 'id_report', 'id');
+    	return $this->belongsTo('App\Models\v1\ReportDetail', 'id_report_detail', 'id');
     }
 
     public function user()

@@ -15,13 +15,18 @@ class SiteSchedule extends Model
     	return $this->belongsTo('App\Models\v1\Site', 'id_site', 'id');
     }
 
+    public function schedule()
+    {
+    	return $this->belongsTo('App\Models\v1\Schedule', 'id_schedule', 'id');
+    }
+
     public function security_schedule()
     {
     	return $this->hasMany('App\Models\v1\SecuritySchedule', 'id_site_schedule', 'id');
     }
 
-    public function schedule()
+    public function report()
     {
-    	return $this->belongsTo('App\Models\v1\Schedule', 'id_schedule', 'id');
+    	return $this->hasMany('App\Models\v1\Report', 'id_site_schedule', 'id');
     }
 }
