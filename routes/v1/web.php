@@ -51,7 +51,18 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 // API v1 Owner
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
-        // Code start from here
+        $router->group(['prefix' => 'user'], function () use ($router) {
+            $router->get('/', ['uses' => 'UserController@index', 'as' => 'owner.user.index']);
+            $router->post('/store', ['uses' => 'UserController@store', 'as' => 'owner.user.store']);
+        });
+        $router->group(['prefix' => 'security'], function () use ($router) {
+            $router->get('/', ['uses' => 'SecurityController@index', 'as' => 'owner.security.index']);
+            $router->post('/store', ['uses' => 'SecurityController@store', 'as' => 'owner.security.store']);
+        });
+        $router->group(['prefix' => 'report'], function () use ($router) {
+            $router->get('/', ['uses' => 'ReportController@index', 'as' => 'owner.report.index']);
+            $router->post('/store', ['uses' => 'ReportController@store', 'as' => 'owner.report.store']);
+        });
     });
 });
 
