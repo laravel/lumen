@@ -15,9 +15,8 @@ class CreateSecuritySchedulesTable extends Migration
     {
         Schema::create('security_schedules', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_sites_schedule')->unsigned();
+            $table->bigInteger('id_site_schedule')->unsigned();
             $table->bigInteger('id_security_plan')->unsigned();
-            $table->bigInteger('id_security_real')->unsigned();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
