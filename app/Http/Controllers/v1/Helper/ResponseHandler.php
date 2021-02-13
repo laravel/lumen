@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers\v1\Helper;
 
-use Illuminate\Database\Eloquent\Model;
-
-class ResponseHandler extends Model
+class ResponseHandler
 {
     /**
      * Return response with code 200 Success
