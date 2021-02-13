@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65d54e54251cff9268cf38be4955c8af",
+    "content-hash": "836dee2c60da26cfca7c0f5c249653ab",
     "packages": [
         {
             "name": "brick/math",
@@ -61,6 +61,51 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "chuckrincon/lumen-config-discover",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chuckrincon/lumen-config-discover.git",
+                "reference": "1397cc352bf154b59cb4b24dec6317ff7972564b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chuckrincon/lumen-config-discover/zipball/1397cc352bf154b59cb4b24dec6317ff7972564b",
+                "reference": "1397cc352bf154b59cb4b24dec6317ff7972564b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chuckrincon\\LumenConfigDiscover\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Rincon",
+                    "email": "chuckrincon@gmail.com"
+                }
+            ],
+            "description": "Load your Lumen configuration files with ease using the Service Providers.",
+            "homepage": "https://github.com/chuckrincon/lumen-config-discover",
+            "keywords": [
+                "config",
+                "framework",
+                "laravel",
+                "lumen",
+                "service provider"
+            ],
+            "support": {
+                "issues": "https://github.com/chuckrincon/lumen-config-discover/issues",
+                "source": "https://github.com/chuckrincon/lumen-config-discover"
+            },
+            "time": "2019-08-23T19:24:14+00:00"
         },
         {
             "name": "doctrine/inflector",
