@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\v1\Owner;
 
 use App\Http\Controllers\Controller;
-use App\Models\ResponseHandler;
 use App\Models\v1\Security;
 
 use Illuminate\Http\Request;
@@ -11,13 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class SecurityController extends Controller
 {
-    private $respHandler;
-
-    public function __construct()
-    {
-        $this->respHandler = new ResponseHandler();
-    }
-
     /**
      * Show list data
      **/

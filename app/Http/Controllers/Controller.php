@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ResponseHandler;
+use App\Http\Controllers\v1\Helper\ResponseHandler;
 
 use Illuminate\Support\Facades\Auth;
 use Laravel\Lumen\Routing\Controller as BaseController;
