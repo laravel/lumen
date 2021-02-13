@@ -14,8 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    // return $router->app->version();
-    return redirect()->route('security.report.index');
+    return $router->app->version();
 });
 
 // API v1
@@ -35,12 +34,23 @@ $router->get('/', function () use ($router) {
     });
 });*/
 
+// API v1 Auth
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+    $router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function () use ($router) {
+        $router->post('/login', ['uses' => 'AuthController@login', 'as' => 'auth.auth.login']);
+        $router->group(['middleware' => 'auth:api'], function () use ($router) {
+            $router->post('/me', ['uses' => 'AuthController@me', 'as' => 'auth.auth.me']);
+        });
+    });
+});
+
 // API v1 Security
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
-    $router->group(['prefix' => 'security', 'namespace' => 'Security'], function () use ($router) {
+    $router->group(['prefix' => 'security', 'namespace' => 'Security', 'middleware' => 'auth:api'], function () use ($router) {
         $router->group(['prefix' => 'report'], function () use ($router) {
             $router->get('/', ['uses' => 'ReportController@index', 'as' => 'security.report.index']);
-            $router->post('/store', ['uses' => 'ReportController@store', 'as' => 'security.report.store']);
+            $router->post('/store', ['uses' => 'ReportController@store_report', 'as' => 'security.report.store_report']);
+            $router->post('/store/detail', ['uses' => 'ReportController@store_report_detail', 'as' => 'security.report.store_report_detail']);
         });
         $router->group(['prefix' => 'broadcast'], function () use ($router) {
             $router->get('/', ['uses' => 'BroadcastController@index', 'as' => 'security.broadcast.index']);
@@ -50,14 +60,14 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 
 // API v1 Owner
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
-    $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
+    $router->group(['prefix' => 'owner', 'namespace' => 'Owner', 'middleware' => 'auth:api'], function () use ($router) {
         // Code start from here
     });
 });
 
 // API v1 Client
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
-    $router->group(['prefix' => 'owner', 'namespace' => 'Client'], function () use ($router) {
+    $router->group(['prefix' => 'owner', 'namespace' => 'Client', 'middleware' => 'auth:api'], function () use ($router) {
         // Code start from here
     });
 });
