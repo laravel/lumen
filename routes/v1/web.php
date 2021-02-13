@@ -17,23 +17,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// API v1
-// SPLIT 3 GROUP FOR DEVELOPING
-/*$router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function () use ($router) {
-    // Security
-    $router->group(['prefix' => 'security', 'namespace' => 'Security'], function () use ($router) {
-        // Code start from here
-    });
-    // Owner
-    $router->group(['prefix' => 'owner', 'namespace' => 'Owner'], function () use ($router) {
-        // Code start from here
-    });
-    // Client
-    $router->group(['prefix' => 'owner', 'namespace' => 'Client'], function () use ($router) {
-        // Code start from here
-    });
-});*/
-
 // API v1 Auth
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function () use ($router) {
