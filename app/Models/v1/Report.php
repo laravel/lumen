@@ -10,9 +10,9 @@ class Report extends Model
     use HasFactory;
     protected $table = 'reports';
 
-    public function site_schedule()
+    public function security_schedule()
     {
-    	return $this->belongsTo('App\Models\v1\SiteSchedule', 'id_site_schedule', 'id');
+    	return $this->belongsTo('App\Models\v1\SiteSchedule', 'id_security_schedule', 'id');
     }
 
     public function security()
@@ -23,5 +23,10 @@ class Report extends Model
     public function report_detail()
     {
     	return $this->hasMany('App\Models\v1\ReportDetail', 'id_report', 'id');
+    }
+
+    public function message()
+    {
+    	return $this->hasMany('App\Models\v1\Message', 'id_report', 'id');
     }
 }

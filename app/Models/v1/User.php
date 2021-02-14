@@ -32,7 +32,7 @@ class User extends Model implements JWTSubject, AuthenticatableContract, Authori
 
     public function message()
     {
-    	return $this->hasMany('App\Models\v1\Message', 'id_user', 'id');
+    	return $this->hasMany('App\Models\v1\Message', 'id_respondent', 'id');
     }
     
     /**

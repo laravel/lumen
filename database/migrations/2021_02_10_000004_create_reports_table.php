@@ -15,7 +15,7 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_site_schedule')->unsigned();
+            $table->bigInteger('id_security_schedule')->unsigned();
             $table->bigInteger('id_security_real')->unsigned();
             $table->date('date')->nullable();
             $table->time('start')->nullable();

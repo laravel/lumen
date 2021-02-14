@@ -10,6 +10,11 @@ class Message extends Model
     use HasFactory;
     protected $table = 'messages';
     
+    public function report()
+    {
+    	return $this->belongsTo('App\Models\v1\Report', 'id_report', 'id');
+    }
+    
     public function report_detail()
     {
     	return $this->belongsTo('App\Models\v1\ReportDetail', 'id_report_detail', 'id');
