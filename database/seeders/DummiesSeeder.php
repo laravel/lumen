@@ -19,5 +19,6 @@ class DummiesSeeder extends Seeder
         \App\Models\v1\Corporate::factory()->count(5)->create();
         \App\Models\v1\Customer::factory()->count(5)->create();
         \App\Models\v1\Site::factory()->count(5)->create();
+        \App\Models\v1\Schedule::factory()->count(5)->create();
     }
 }

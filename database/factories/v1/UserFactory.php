@@ -3,6 +3,7 @@
 namespace Database\Factories\v1;
 
 use App\Models\v1\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
@@ -30,9 +31,7 @@ class UserFactory extends Factory
         return [
             'id_people' => $this->faker->unique()->randomElement($people_id),
             'username' => $this->faker->userName,
-            'password' => Hash::make('admin', [
-                'rounds' => 10,
-            ]),
+            'password' => Hash::make('admin'),
             'email' => $this->faker->unique()->safeEmail,
         ];
     }
