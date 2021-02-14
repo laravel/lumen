@@ -19,13 +19,14 @@ class ForeignKeys extends Migration
         });
 
         Schema::table('messages', function (Blueprint $table) {
+            $table->foreign('id_report')->references('id')->on('reports');
             $table->foreign('id_report_detail')->references('id')->on('report_details');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_respondent')->references('id')->on('users');
         });
 
         Schema::table('reports', function (Blueprint $table) {
             $table->foreign('id_security_real')->references('id')->on('securities');
-            $table->foreign('id_site_schedule')->references('id')->on('site_schedules');
+            $table->foreign('id_security_schedule')->references('id')->on('security_schedules');
         });
         Schema::table('report_details', function (Blueprint $table) {
             $table->foreign('id_report')->references('id')->on('reports');

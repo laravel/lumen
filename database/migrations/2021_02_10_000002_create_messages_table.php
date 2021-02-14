@@ -15,8 +15,9 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_report')->unsigned();
             $table->bigInteger('id_report_detail')->unsigned()->nullable();
-            $table->bigInteger('id_user')->unsigned();
+            $table->bigInteger('id_respondent')->unsigned();
             $table->string('message')->nullable();
             $table->enum('report_type',['R','S'])->default('R'); // R = Reports, S = SOS
             $table->enum('sos_to',['Owner','Client'])->nullable();

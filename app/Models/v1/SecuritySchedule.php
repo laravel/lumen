@@ -19,4 +19,9 @@ class SecuritySchedule extends Model
     {
     	return $this->belongsTo('App\Models\v1\SiteSchedule', 'id_site_schedule', 'id');
     }
+
+    public function report()
+    {
+    	return $this->hasMany('App\Models\v1\Report', 'id_site_schedule', 'id');
+    }
 }

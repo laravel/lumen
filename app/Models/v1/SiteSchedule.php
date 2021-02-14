@@ -24,9 +24,4 @@ class SiteSchedule extends Model
     {
     	return $this->hasMany('App\Models\v1\SecuritySchedule', 'id_site_schedule', 'id');
     }
-
-    public function report()
-    {
-    	return $this->hasMany('App\Models\v1\Report', 'id_site_schedule', 'id');
-    }
 }
