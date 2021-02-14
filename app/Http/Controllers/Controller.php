@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\v1\Helper\ResponseHandler;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -28,5 +29,10 @@ class Controller extends BaseController
         {
             return $this->respHandler->requestError($e->getMessage());
         }
+    }
+
+    public function hashPassword($password)
+    {
+        return Hash::make($password);
     }
 }

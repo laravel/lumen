@@ -13,8 +13,8 @@ class AuthController extends Controller
     /**
      * Get token from login
      * POST api/v1/auth/login
-     * @param username
-     * @param password
+     * @param Request username
+     * @param Request password
      * @return Response 
      **/
 	public function login(Request $request)
@@ -35,7 +35,7 @@ class AuthController extends Controller
                     return $this->respHandler->requestError('Unauthorized.');
                 }
                 
-                return $this->respHandler->success('Succes get token bearer.', ['token' => $token]);
+                return $this->respHandler->success('Success get token bearer.', ['token' => $token]);
             }
             else
                 return $this->respHandler->requestError($validator->errors());
@@ -48,20 +48,53 @@ class AuthController extends Controller
 
      /**
      * Get user details. 
-     * TEST CODE, REMOVE LATER
-     * @param  Request  $request
-     * @return Response
+     * GET api/v1/auth/profile
      */	 	
-    public function me()
+    public function viewProfile()
     {
         try 
         {
             $user = $this->authUser()->toArray();
-            return $this->respHandler->success('Succes get user.', $user);
+            return $this->respHandler->success('Success get user.', $user);
         } 
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
         }
     }
+    
+   /**
+     * Log the application out.
+     * GET api/v1/auth/logout
+     */
+    public function logout()
+    {
+        try 
+        {
+            $auth = Auth::guard('api')->logout();
+            return $this->respHandler->success('Successfully logged out.');
+        } 
+        catch(\Exception $e)
+        {
+            return $this->respHandler->requestError($e->getMessage());
+        }
+    }
+
+    /**
+     * Refresh a token.
+     * GET api/v1/auth/refresh-token
+     */
+    public function refreshToken()
+    {
+        try
+         {
+            $token = Auth::guard('api')->refresh();
+            return $this->respHandler->success('Succes refresh token bearer.', ['token' => $token]);
+        }
+         catch(\Exception $e)
+        {
+            return $this->respHandler->requestError($e->getMessage());
+        }
+    }
+
 }

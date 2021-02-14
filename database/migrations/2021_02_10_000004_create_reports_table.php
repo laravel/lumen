@@ -17,6 +17,7 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->bigInteger('id_site_schedule')->unsigned();
             $table->bigInteger('id_security_real')->unsigned();
+            $table->date('date')->nullable();
             $table->time('start')->nullable();
             $table->time('end')->nullable();
             $table->timestamp('created_at')->useCurrent();

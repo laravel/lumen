@@ -33,19 +33,17 @@ class ReportController extends Controller
      * Store report data request
      * POST api/v1/security/report/store
      **/
-    public function store_report(Request $request)
+    public function storeReport(Request $request)
 	{
         try
         {
-            // CALL THIS FUNCTION WHEN CLICK START
-            // GET ID_SECURITY_REAL WITH JWT
-            // $report = Report::with('site_schedule.schedule')->first();
-            // dd($report->toArray());
+            $get_time = Carbon::now('Asia/Bangkok');
 
             $new_report = new Report;
             $new_report->id_site_schedule = 1;
             $new_report->id_security_real = 1;
-            $new_report->start = Carbon::now('Asia/Bangkok');
+            $new_report->date = $get_time;
+            $new_report->start = $get_time;
             $new_report->save();
             
             return $this->respHandler->success('Berhasil mengirimkan data.', $new_report->toArray());
@@ -59,14 +57,14 @@ class ReportController extends Controller
     /**
      * Store report_detail data request
      * POST api/v1/security/report/store/detail
-     * @param long
-     * @param lat
-     * @param message
-     * @param report_type
-     * @param sos_to
-     * @param message_type
+     * @param Request long
+     * @param Request lat
+     * @param Request message
+     * @param Request report_type
+     * @param Request sos_to
+     * @param Request message_type
      **/
-    public function store_report_detail(Request $request)
+    public function storeReportDetail(Request $request)
 	{
         try
         {
