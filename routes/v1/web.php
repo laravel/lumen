@@ -46,7 +46,21 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 // API v1 Owner
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Owner', 'middleware' => 'auth:api'], function () use ($router) {
-        // Code start from here
+        $router->group(['prefix' => 'security'], function () use ($router) {
+            $router->get('/get', ['uses' => 'SecurityController@index', 'as' => 'owner.security.index']);
+            $router->get('/get/{id}', ['uses' => 'SecurityController@index', 'as' => 'owner.security.index']);
+            $router->post('/store', ['uses' => 'SecurityController@storeSecurity', 'as' => 'owner.security.storeSecurity']);
+            $router->post('/update', ['uses' => 'SecurityController@updateSecurity', 'as' => 'owner.security.updateSecurity']);
+            $router->get('/delete/{id}', ['uses' => 'SecurityController@deleteSecurity', 'as' => 'owner.security.deleteSecurity']);
+        });
+
+        $router->group(['prefix' => 'security/schedule'], function () use ($router) {
+            $router->get('/get', ['uses' => 'SecurityScheduleController@index', 'as' => 'owner.security.schedule.index']);
+            $router->get('/get/{id}', ['uses' => 'SecurityScheduleController@index', 'as' => 'owner.security.schedule.index']);
+            $router->post('/store', ['uses' => 'SecurityScheduleController@storeSecuritySchedule', 'as' => 'owner.security.schedule.storeSecuritySchedule']);
+            $router->post('/update', ['uses' => 'SecurityScheduleController@updateSecuritySchedule', 'as' => 'owner.security.schedule.updateSecuritySchedule']);
+            $router->get('/delete/{id}', ['uses' => 'SecurityScheduleController@deleteSecuritySchedule', 'as' => 'owner.security.schedule.deleteSecuritySchedule']);
+        });
     });
 });
 

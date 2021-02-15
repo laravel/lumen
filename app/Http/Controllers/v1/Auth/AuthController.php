@@ -4,9 +4,9 @@ namespace App\Http\Controllers\v1\Auth;
 
 use App\Http\Controllers\Controller;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -49,6 +49,7 @@ class AuthController extends Controller
      /**
      * Get user details. 
      * GET api/v1/auth/profile
+     * @return Response
      */	 	
     public function viewProfile()
     {
