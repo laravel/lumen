@@ -48,7 +48,7 @@ class SecurityController extends Controller
                 'id_people' => 'required'
             ]);
 
-            if($validator->validated())
+            if (! $validator->fails())
             {
                 $new_security = new Security;
                 $new_security->id_people = $request->id_people;
@@ -69,24 +69,23 @@ class SecurityController extends Controller
 
     /**
      * Update Security
-     * POST api/v1/owner/security/update
-     * @param Request id
+     * PUT api/v1/owner/security/update
+     * @param id
      * @param Request id_supervisor
      * @return Response
      **/
-    public function updateSecurity(Request $request)
+    public function updateSecurity(Request $request, $id)
 	{
         try
         {
             $validator = Validator::make($request->post(), [
-                'id' => 'required',
                 'id_supervisor' => 'required',
                 'security_number' => 'required'
             ]);
 
-            if($validator->validated())
+            if (! $validator->fails())
             {
-                $new_security = Security::find($request->id);
+                $new_security = Security::find($id);
                 $new_security->id_supervisor = $request->id_supervisor;
                 $new_security->security_number = $request->security_number;
                 $new_security->save();
@@ -104,14 +103,19 @@ class SecurityController extends Controller
 
     /**
      * Delete Security
-     * GET api/v1/owner/security/delete
+     * DELETE api/v1/owner/security/delete
      * @param id
      **/
     public function deleteSecurity($id)
 	{
         try
         {
-            $security = Security::find($id)->delete();
+            $security = Security::find($id);
+            
+            if ($security)
+                $security->delete();
+            else
+                return $this->respHandler->requestError('Security not found.');
 
             return $this->respHandler->success('Security has been deleted.');
         }

@@ -46,10 +46,9 @@ class SecurityScheduleController extends Controller
             $validator = Validator::make($request->post(), [
                 'id_security_plan' => 'required',
                 'id_site_schedule' => 'required'
-                
             ]);
             
-            if($validator->validated())
+            if (! $validator->fails())
             {
                 $new_security_schedule = new SecuritySchedule;
                 $new_security_schedule->id_security_plan = $request->id_security_plan;
@@ -69,26 +68,24 @@ class SecurityScheduleController extends Controller
 
     /**
      * Update Security Schedule
-     * POST api/v1/owner/security/schedule/update
-     * @param Request id
+     * PUT api/v1/owner/security/schedule/update
+     * @param id
      * @param Request id_security_plan
      * @param Request id_site_schedule
      * @return Response
      **/
-    public function updateSecuritySchedule(Request $request)
+    public function updateSecuritySchedule(Request $request, $id)
 	{
         try 
         {
-            // dd($request->post() );
             $validator = Validator::make($request->post(), [
-                'id' => 'required',
                 'id_security_plan' => 'required',
                 'id_site_schedule' => 'required'
             ]);
             
-            if($validator->validated())
+            if (! $validator->fails())
             {
-                $new_security_schedule = SecuritySchedule::find($request->id);
+                $new_security_schedule = SecuritySchedule::find($id);
                 $new_security_schedule->id = $request->id;
                 $new_security_schedule->id_security_plan = $request->id_security_plan;
                 $new_security_schedule->id_site_schedule = $request->id_site_schedule;
@@ -107,14 +104,19 @@ class SecurityScheduleController extends Controller
 
     /**
      * Delete Security Schedule
-     * GET api/v1/owner/security/schedule/store
+     * DELETE api/v1/owner/security/schedule/store
      * @param id
      **/
     public function deleteSecuritySchedule($id)
 	{
         try 
         {
-            $security = SecuritySchedule::find($id)->delete();
+            $security = SecuritySchedule::find($id);
+
+            if ($security)
+                $security->delete();
+            else
+                return $this->respHandler->requestError('Security Schedule not found.');
 
             return $this->respHandler->success('Security Schedule has been deleted.');
         } 

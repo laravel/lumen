@@ -34,7 +34,7 @@ class PeopleController extends Controller
                 'sex' => 'required'
             ]);
 
-            if ($validator->validated())
+            if (! $validator->fails())
             {
                 $new_people = new People();
                 $new_people->name = $request->name;
@@ -57,8 +57,8 @@ class PeopleController extends Controller
 
     /**
      * Update people
-     * POST api/v1/owner/people/update
-     * @param Request id
+     * PUT api/v1/owner/people/update
+     * @param id
      * @param Request name
      * @param Request address
      * @param Request phone_number
@@ -67,12 +67,11 @@ class PeopleController extends Controller
      * @param Request sex
      * @return Response
      **/
-    public function updatePeople(Request $request)
+    public function updatePeople(Request $request, $id)
 	{
         try
         {
             $validator = Validator::make($request->post(), [
-                'id' => 'required',
                 'name' => 'required',
                 'address' => 'required',
                 'phone_number' => 'required',
@@ -81,9 +80,9 @@ class PeopleController extends Controller
                 'sex' => 'required'
             ]);
 
-            if ($validator->validated())
+            if (! $validator->fails())
             {
-                $new_people = People::find($request->id);
+                $new_people = People::find($id);
                 $new_people->name = $request->name;
                 $new_people->address = $request->address;
                 $new_people->phone_number = $request->phone_number;
@@ -104,7 +103,7 @@ class PeopleController extends Controller
 
     /**
      * Delete People
-     * GET api/v1/owner/people/delete
+     * DELETE api/v1/owner/people/delete
      * @param id
      **/
     public function deleteUser($id)
@@ -118,14 +117,11 @@ class PeopleController extends Controller
             else
                 return $this->respHandler->requestError('People not found.');
 
-            return $this->reshandler->success ("people has been deleted")
-
-
+            return $this->reshandler->success ("People has been deleted.");
         }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
         }
 	}
-
 }

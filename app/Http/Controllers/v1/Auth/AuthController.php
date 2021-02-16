@@ -26,7 +26,7 @@ class AuthController extends Controller
                 'password' => 'required',
             ]);
 
-            if ($validator->validated())
+            if (! $validator->fails())
             {
                 $credentials = $request->only(['username', 'password']);
 

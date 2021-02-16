@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
- /**
+    /**
      * Get User data
      * GET api/v1/owner/user/
      * @param id
@@ -22,10 +22,9 @@ class UserController extends Controller
 	{
         try
         {
-            $user = $id ? User::with('people')->find($id) : User::with('people')->get($id);
+            $user = $id ? User::with('people')->find($id) : User::with('people')->get();
 
             return $this->respHandler->success('Success get data.', $user);
-            // Start code here
         }
         catch(\Exception $e)
         {
@@ -104,27 +103,26 @@ class UserController extends Controller
 
     /**
      * Update User
-     * POST api/v1/owner/user/update
-     * @param Request id
+     * PUT api/v1/owner/user/update
+     * @param id
      * @param Request username
      * @param Request password
      * @param Request email
      * @return Response
      **/
-    public function updateUser(Request $request)
+    public function updateUser(Request $request, $id)
 	{
         try
         {
             $validator = Validator::make($request->post(), [
-                'id' => 'required',
                 'username' => 'required',
                 'password' => 'required',
                 'email' => 'required',
             ]);
 
-            if ($validator->validated())
+            if (! $validator->fails())
             {
-                $new_user = User::find($request->id);
+                $new_user = User::find($id);
                 $new_user->username = $request->username;
                 $new_user->password = Hash::make($request->Password);
                 $new_user->email = $request->email;
@@ -143,7 +141,7 @@ class UserController extends Controller
 
     /**
      * Delete User
-     * GET api/v1/owner/user/delete
+     * DELETE api/v1/owner/user/delete
      * @param id
      **/
     public function deleteUser($id)
@@ -155,15 +153,13 @@ class UserController extends Controller
             if ($user)
                  $user->delete();
             else
-                return $this->respHandler->requestError('People not found.');
+                return $this->respHandler->requestError('User not found.');
 
-            return $this->reshandler->success ("people has been deleted")
-
+            return $this->reshandler->success ("User has been deleted.");
         }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
         }
 	}
-
 }
