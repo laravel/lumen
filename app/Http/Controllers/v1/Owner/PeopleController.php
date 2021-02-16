@@ -20,7 +20,6 @@ class PeopleController extends Controller
      * @param Request age
      * @param Request sex
      * @return Response
-     * @
      **/
     public function storePeople(Request $request)
 	{
@@ -35,7 +34,7 @@ class PeopleController extends Controller
                 'sex' => 'required'
             ]);
 
-            if($validator->validated())
+            if ($validator->validated())
             {
                 $new_people = new People();
                 $new_people->name = $request->name;
@@ -72,7 +71,6 @@ class PeopleController extends Controller
 	{
         try
         {
-            // dd($request->post() );
             $validator = Validator::make($request->post(), [
                 'id' => 'required',
                 'name' => 'required',
@@ -83,7 +81,7 @@ class PeopleController extends Controller
                 'sex' => 'required'
             ]);
 
-            if($validator->validated())
+            if ($validator->validated())
             {
                 $new_people = People::find($request->id);
                 $new_people->name = $request->name;
@@ -113,9 +111,16 @@ class PeopleController extends Controller
 	{
         try
         {
-            $people = People::find($id)->delete();
+            $people = People::find($id);
 
-            return $this->respHandler->success('Security has been deleted.');
+            if ($people)
+                 $people->delete();
+            else
+                return $this->respHandler->requestError('People not found.');
+
+            return $this->reshandler->success ("people has been deleted")
+
+
         }
         catch(\Exception $e)
         {

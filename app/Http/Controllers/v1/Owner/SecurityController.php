@@ -78,7 +78,6 @@ class SecurityController extends Controller
 	{
         try
         {
-            // dd($request->post() );
             $validator = Validator::make($request->post(), [
                 'id' => 'required',
                 'id_supervisor' => 'required',

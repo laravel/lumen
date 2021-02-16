@@ -17,7 +17,6 @@ class UserController extends Controller
      * GET api/v1/owner/user/
      * @param id
      * @return Response
-     * @
      **/
 	public function index($id = NULL)
 	{
@@ -42,7 +41,6 @@ class UserController extends Controller
      * @param Request password
      * @param Request email
      * @return Response
-     * @
      **/
     public function storeUser(Request $request)
 	{
@@ -117,7 +115,6 @@ class UserController extends Controller
 	{
         try
         {
-            // dd($request->post() );
             $validator = Validator::make($request->post(), [
                 'id' => 'required',
                 'username' => 'required',
@@ -125,7 +122,7 @@ class UserController extends Controller
                 'email' => 'required',
             ]);
 
-            if($validator->validated())
+            if ($validator->validated())
             {
                 $new_user = User::find($request->id);
                 $new_user->username = $request->username;
@@ -153,9 +150,15 @@ class UserController extends Controller
 	{
         try
         {
-            $user = User::find($id)->delete();
+            $user = User::find($id);
 
-            return $this->respHandler->success('Security has been deleted.');
+            if ($user)
+                 $user->delete();
+            else
+                return $this->respHandler->requestError('People not found.');
+
+            return $this->reshandler->success ("people has been deleted")
+
         }
         catch(\Exception $e)
         {

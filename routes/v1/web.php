@@ -55,8 +55,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
         });
 
         $router->group(['prefix' => 'user'], function () use ($router) {
-            $router->get('/get', ['uses' => 'UserController@index', 'as' => 'owner.user.index']);
-            $router->get('/get/{id}', ['uses' => 'UserController@index', 'as' => 'owner.user.index']);
+            $router->get('/get[/{id}]', ['uses' => 'UserController@index', 'as' => 'owner.user.index']);
             $router->post('/store', ['uses' => 'UserController@storeUser', 'as' => 'owner.user.storeUser']);
             $router->post('/update', ['uses' => 'UserController@updateUser', 'as' => 'owner.user.updateUser']);
             $router->get('/delete/{id}', ['uses' => 'UserController@deleteUser', 'as' => 'owner.user.deleteUser']);
