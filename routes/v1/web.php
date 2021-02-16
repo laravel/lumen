@@ -54,6 +54,19 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
             $router->get('/delete/{id}', ['uses' => 'SecurityController@deleteSecurity', 'as' => 'owner.security.deleteSecurity']);
         });
 
+        $router->group(['prefix' => 'user'], function () use ($router) {
+            $router->get('/get[/{id}]', ['uses' => 'UserController@index', 'as' => 'owner.user.index']);
+            $router->post('/store', ['uses' => 'UserController@storeUser', 'as' => 'owner.user.storeUser']);
+            $router->post('/update', ['uses' => 'UserController@updateUser', 'as' => 'owner.user.updateUser']);
+            $router->get('/delete/{id}', ['uses' => 'UserController@deleteUser', 'as' => 'owner.user.deleteUser']);
+        });
+
+        $router->group(['prefix' => 'people'], function () use ($router) {
+            $router->post('/store', ['uses' => 'PeopleController@storeSecurity', 'as' => 'owner.people.storeSecurity']);
+            $router->post('/update', ['uses' => 'PeopleController@updateSecurity', 'as' => 'owner.people.updateSecurity']);
+            $router->get('/delete/{id}', ['uses' => 'PeopleController@deleteSecurity', 'as' => 'owner.people.deleteSecurity']);
+        });
+
         $router->group(['prefix' => 'security/schedule'], function () use ($router) {
             $router->get('/get', ['uses' => 'SecurityScheduleController@index', 'as' => 'owner.security.schedule.index']);
             $router->get('/get/{id}', ['uses' => 'SecurityScheduleController@index', 'as' => 'owner.security.schedule.index']);

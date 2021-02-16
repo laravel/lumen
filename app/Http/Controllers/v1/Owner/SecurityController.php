@@ -19,12 +19,12 @@ class SecurityController extends Controller
      **/
 	public function index($id = NULL)
 	{
-        try 
+        try
         {
             $security = $id ? Security::find($id) : Security::get();
 
             return $this->respHandler->success('Success get data.', $security);
-        } 
+        }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
@@ -42,12 +42,12 @@ class SecurityController extends Controller
      **/
     public function storeSecurity(Request $request)
 	{
-        try 
+        try
         {
             $validator = Validator::make($request->post(), [
                 'id_people' => 'required'
             ]);
-            
+
             if($validator->validated())
             {
                 $new_security = new Security;
@@ -60,7 +60,7 @@ class SecurityController extends Controller
             }
             else
                 return $this->respHandler->requestError($validator->errors());
-        } 
+        }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
@@ -76,15 +76,14 @@ class SecurityController extends Controller
      **/
     public function updateSecurity(Request $request)
 	{
-        try 
+        try
         {
-            // dd($request->post() );
             $validator = Validator::make($request->post(), [
                 'id' => 'required',
                 'id_supervisor' => 'required',
                 'security_number' => 'required'
             ]);
-            
+
             if($validator->validated())
             {
                 $new_security = Security::find($request->id);
@@ -96,7 +95,7 @@ class SecurityController extends Controller
             }
             else
                 return $this->respHandler->requestError($validator->errors());
-        } 
+        }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
@@ -105,17 +104,17 @@ class SecurityController extends Controller
 
     /**
      * Delete Security
-     * GET api/v1/owner/security/store
+     * GET api/v1/owner/security/delete
      * @param id
      **/
     public function deleteSecurity($id)
 	{
-        try 
+        try
         {
             $security = Security::find($id)->delete();
 
             return $this->respHandler->success('Security has been deleted.');
-        } 
+        }
         catch(\Exception $e)
         {
             return $this->respHandler->requestError($e->getMessage());
