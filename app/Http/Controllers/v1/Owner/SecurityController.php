@@ -15,7 +15,6 @@ class SecurityController extends Controller
      * GET api/v1/owner/security/
      * @param id
      * @return Response
-     * @
      **/
 	public function index($id = NULL)
 	{
@@ -38,7 +37,6 @@ class SecurityController extends Controller
      * @param Request id_supervisor
      * @param Request security_number
      * @return Response
-     * @
      **/
     public function storeSecurity(Request $request)
 	{

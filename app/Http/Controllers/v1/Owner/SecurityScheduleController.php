@@ -15,7 +15,6 @@ class SecurityScheduleController extends Controller
      * GET api/v1/owner/security/schedule/
      * @param id
      * @return Response
-     * @
      **/
 	public function index($id = NULL)
 	{
@@ -37,7 +36,6 @@ class SecurityScheduleController extends Controller
      * @param Request id_security_plan
      * @param Request id_site_schedule
      * @return Response
-     * @
      **/
     public function storeSecuritySchedule(Request $request)
 	{
