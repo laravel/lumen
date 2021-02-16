@@ -155,7 +155,7 @@ class UserController extends Controller
             else
                 return $this->respHandler->requestError('User not found.');
 
-            return $this->reshandler->success ("User has been deleted.");
+            return $this->reshandler->success('User has been deleted.');
         }
         catch(\Exception $e)
         {

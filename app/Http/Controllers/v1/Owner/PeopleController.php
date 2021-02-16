@@ -117,7 +117,7 @@ class PeopleController extends Controller
             else
                 return $this->respHandler->requestError('People not found.');
 
-            return $this->reshandler->success ("People has been deleted.");
+            return $this->reshandler->success('People has been deleted.');
         }
         catch(\Exception $e)
         {
