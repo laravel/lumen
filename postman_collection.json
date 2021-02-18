@@ -1,0 +1,1418 @@
+{
+	"info": {
+		"_postman_id": "95108c1f-7b57-4499-bb01-02c38131617b",
+		"name": "Epatrol API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "nelle33",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "Security",
+					"item": [
+						{
+							"name": "Get Security",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Security by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Security",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Security",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id_supervisor",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "security_number",
+											"value": "14567845381670",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/update/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Security",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/delete/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"delete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Security Schedule",
+					"item": [
+						{
+							"name": "Get Security Schedule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"schedule",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Security Schedule by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"schedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Security Schedule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id_security_plan",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id_site_schedule",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"schedule",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Security Schedule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "id_security_plan",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "id_site_schedule",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/update/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"schedule",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Security Schedule",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/delete/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"security",
+										"schedule",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Get User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/user/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/user/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "test124",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "asdasdsad@asdasd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/user/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"user",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Elienzs",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "awdawda@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/user/update/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"user",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/user/schedule/delete/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"user",
+										"schedule",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "People",
+					"item": [
+						{
+							"name": "Get People",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/people/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"people",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get People By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/people/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"people",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add People",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "awdawdawd",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "gregtrffthtjyutjrt",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "14125235252",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "1984-03-02",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "35",
+											"type": "text"
+										},
+										{
+											"key": "sex",
+											"value": "M",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/people/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"people",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update People",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/people/update/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"people",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete People",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/people/delete/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"people",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Get Customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/customer/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"customer",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Customer By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/customer/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"customer",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_people",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "id_corporate",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/customer/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"customer",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Customer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_corporate",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/customer/update/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"customer",
+										"update",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Customer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/customer/delete/7",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"customer",
+										"delete",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Site",
+					"item": [
+						{
+							"name": "Get Site",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Site By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Site",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_corporate",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Site 1",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Site 1 Address",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "Tidak ada detail",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "109",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "99",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_corporate",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Test Site Dua Puluh",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "Tidak ada detail",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "888",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "999",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/update/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Site",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/delete/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TEST LOKAL",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "dean06",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/auth/login",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/auth/logout",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/auth/profile",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh Token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/auth/refresh-token",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Site",
+					"item": [
+						{
+							"name": "Get Site",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Site By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/2",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Site",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_corporate",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Site 1",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Site 1 Address",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "Tidak ada detail",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "109",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "99",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/store",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_corporate",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Test Site Dua Puluh",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "Tidak ada detail",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "888",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "999",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/update/4",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Site",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/delete/5",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2xhcmF2ZWxcL3BhdHJvbF9wcm9qZWN0LWFwaVwvcGF0cm9sX3Byb2plY3RcL3B1YmxpY1wvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTM2NjEyNjIsIm5iZiI6MTYxMzY2MTI2MiwianRpIjoiRDlqT2c2d3ZsOFFXVG9UZCIsInN1YiI6NCwicHJ2IjoiYTk1OTY3OGViNzNkNzY4NjBhZWVhZjk4OWQ1NTYxZTA3M2UxZTc4ZSJ9.RqOyP9vCoj1YN48OQCBJ4EMsHzw73LQ5dUK_TX-5KvE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMDMuMTUzLjIuMzU6ODA4MFwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTM2NjExNDksIm5iZiI6MTYxMzY2MTE0OSwianRpIjoiNXFmOXUwbW1kejRNQU9PZiIsInN1YiI6NCwicHJ2IjoiYTk1OTY3OGViNzNkNzY4NjBhZWVhZjk4OWQ1NTYxZTA3M2UxZTc4ZSJ9.FQBgTusck-bzPvCHGSIg7rXZDTYj5SGTycJE8wMu4Fc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://103.153.2.35:8080"
+		},
+		{
+			"key": "BASE_URL_LOKAL",
+			"value": "http://localhost/laravel/patrol_project-api/patrol_project/public"
+		}
+	]
+}
