@@ -11,6 +11,26 @@ use Illuminate\Support\Facades\Validator;
 class PeopleController extends Controller
 {
     /**
+     * Get people data
+     * GET api/v1/owner/people/
+     * @param id
+     * @return Response
+     **/
+	public function index($id = NULL)
+	{
+        try
+        {
+            $people = $id ? People::find($id) : People::all();
+
+            return $this->respHandler->success('Success get data.', $people);
+        }
+        catch(\Exception $e)
+        {
+            return $this->respHandler->requestError($e->getMessage());
+        }
+	}
+
+    /**
      * Create new people
      * POST api/v1/owner/people/store
      * @param Request name
@@ -117,7 +137,7 @@ class PeopleController extends Controller
             else
                 return $this->respHandler->requestError('People not found.');
 
-            return $this->reshandler->success('People has been deleted.');
+            return $this->respHandler->success('People has been deleted.');
         }
         catch(\Exception $e)
         {

@@ -73,9 +73,27 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
         });
 
         $router->group(['prefix' => 'people'], function () use ($router) {
+            $router->get('/', ['uses' => 'PeopleController@index', 'as' => 'owner.people.index']);
+            $router->get('/{id}', ['uses' => 'PeopleController@index', 'as' => 'owner.people.index']);
             $router->post('/store', ['uses' => 'PeopleController@storeSecurity', 'as' => 'owner.people.storeSecurity']);
             $router->put('/update/{id}', ['uses' => 'PeopleController@updateSecurity', 'as' => 'owner.people.updateSecurity']);
             $router->delete('/delete/{id}', ['uses' => 'PeopleController@deleteSecurity', 'as' => 'owner.people.deleteSecurity']);
+        });
+
+        $router->group(['prefix' => 'customer'], function () use ($router) {
+            $router->get('/', ['uses' => 'CustomerController@index', 'as' => 'owner.customer.index']);
+            $router->get('/{id}', ['uses' => 'CustomerController@index', 'as' => 'owner.customer.index']);
+            $router->post('/store', ['uses' => 'CustomerController@storeCustomer', 'as' => 'owner.customer.storeCustomer']);
+            $router->put('/update/{id}', ['uses' => 'CustomerController@updateCustomer', 'as' => 'owner.customer.updateCustomer']);
+            $router->delete('/delete/{id}', ['uses' => 'CustomerController@deleteCustomer', 'as' => 'owner.customer.deleteCustomer']);
+        });
+
+        $router->group(['prefix' => 'site'], function () use ($router) {
+            $router->get('/', ['uses' => 'SiteController@index', 'as' => 'owner.site.index']);
+            $router->get('/{id}', ['uses' => 'SiteController@index', 'as' => 'owner.site.index']);
+            $router->post('/store', ['uses' => 'SiteController@storeSite', 'as' => 'owner.site.storeCustomer']);
+            $router->put('/update/{id}', ['uses' => 'SiteController@updateSite', 'as' => 'owner.site.updateCustomer']);
+            $router->delete('/delete/{id}', ['uses' => 'SiteController@deleteSite', 'as' => 'owner.site.deleteCustomer']);
         });
     });
 });
