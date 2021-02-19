@@ -88,12 +88,20 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
             $router->delete('/delete/{id}', ['uses' => 'CustomerController@deleteCustomer', 'as' => 'owner.customer.deleteCustomer']);
         });
 
+        $router->group(['prefix' => 'site/schedule'], function () use ($router) {
+            $router->get('/', ['uses' => 'SiteScheduleController@index', 'as' => 'owner.site.schedule.index']);
+            $router->get('/{id}', ['uses' => 'SiteScheduleController@index', 'as' => 'owner.site.schedule.index']);
+            $router->post('/store', ['uses' => 'SiteScheduleController@storeSiteSchedule', 'as' => 'owner.site.schedule.storeSiteSchedule']);
+            $router->put('/update/{id}', ['uses' => 'SiteScheduleController@updateSiteSchedule', 'as' => 'owner.site.schedule.updateSiteSchedule']);
+            $router->delete('/delete/{id}', ['uses' => 'SiteScheduleController@deleteSiteSchedule', 'as' => 'owner.site.schedule.deleteSiteSchedule']);
+        });
+
         $router->group(['prefix' => 'site'], function () use ($router) {
             $router->get('/', ['uses' => 'SiteController@index', 'as' => 'owner.site.index']);
             $router->get('/{id}', ['uses' => 'SiteController@index', 'as' => 'owner.site.index']);
-            $router->post('/store', ['uses' => 'SiteController@storeSite', 'as' => 'owner.site.storeCustomer']);
-            $router->put('/update/{id}', ['uses' => 'SiteController@updateSite', 'as' => 'owner.site.updateCustomer']);
-            $router->delete('/delete/{id}', ['uses' => 'SiteController@deleteSite', 'as' => 'owner.site.deleteCustomer']);
+            $router->post('/store', ['uses' => 'SiteController@storeSite', 'as' => 'owner.site.storeSite']);
+            $router->put('/update/{id}', ['uses' => 'SiteController@updateSite', 'as' => 'owner.site.updateSite']);
+            $router->delete('/delete/{id}', ['uses' => 'SiteController@deleteSite', 'as' => 'owner.site.deleteSite']);
         });
     });
 });

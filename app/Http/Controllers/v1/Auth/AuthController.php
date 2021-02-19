@@ -46,11 +46,11 @@ class AuthController extends Controller
         }
 	}
 
-     /**
+    /**
      * Get user details. 
      * GET api/v1/auth/profile
      * @return Response
-     */	 	
+     **/	 	
     public function viewProfile()
     {
         try 
@@ -64,10 +64,10 @@ class AuthController extends Controller
         }
     }
     
-   /**
+    /**
      * Log the application out.
      * GET api/v1/auth/logout
-     */
+     **/
     public function logout()
     {
         try 
@@ -84,7 +84,7 @@ class AuthController extends Controller
     /**
      * Refresh a token.
      * GET api/v1/auth/refresh-token
-     */
+     **/
     public function refreshToken()
     {
         try

@@ -1039,6 +1039,147 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Site Schedule",
+					"item": [
+						{
+							"name": "Get Site Schedule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Site Schedule By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Site Schedule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_site",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id_schedule",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site Schedule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_schedule",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/update/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Site Schedule",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/delete/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -1341,6 +1482,147 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Site Schedule",
+					"item": [
+						{
+							"name": "Get Site Schedule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Site Schedule By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/2",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Site Schedule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_site",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id_schedule",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/store",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site Schedule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_schedule",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/update/2",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Site Schedule",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/delete/2",
+									"host": [
+										"{{BASE_URL_LOKAL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"schedule",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
@@ -1348,7 +1630,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2xhcmF2ZWxcL3BhdHJvbF9wcm9qZWN0LWFwaVwvcGF0cm9sX3Byb2plY3RcL3B1YmxpY1wvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTM2NjEyNjIsIm5iZiI6MTYxMzY2MTI2MiwianRpIjoiRDlqT2c2d3ZsOFFXVG9UZCIsInN1YiI6NCwicHJ2IjoiYTk1OTY3OGViNzNkNzY4NjBhZWVhZjk4OWQ1NTYxZTA3M2UxZTc4ZSJ9.RqOyP9vCoj1YN48OQCBJ4EMsHzw73LQ5dUK_TX-5KvE",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2xhcmF2ZWxcL3BhdHJvbF9wcm9qZWN0LWFwaVwvcGF0cm9sX3Byb2plY3RcL3B1YmxpY1wvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTM3NjI3MDcsIm5iZiI6MTYxMzc2MjcwNywianRpIjoiN3FhRGtqRjFHc3lZampNQyIsInN1YiI6NCwicHJ2IjoiYTk1OTY3OGViNzNkNzY4NjBhZWVhZjk4OWQ1NTYxZTA3M2UxZTc4ZSJ9.SvJssmqJoDSwDfxOChAN3iek2MTcvSBB0ZIMjR1Tdxo",
 						"type": "string"
 					}
 				]
@@ -1380,7 +1662,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMDMuMTUzLjIuMzU6ODA4MFwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTM2NjExNDksIm5iZiI6MTYxMzY2MTE0OSwianRpIjoiNXFmOXUwbW1kejRNQU9PZiIsInN1YiI6NCwicHJ2IjoiYTk1OTY3OGViNzNkNzY4NjBhZWVhZjk4OWQ1NTYxZTA3M2UxZTc4ZSJ9.FQBgTusck-bzPvCHGSIg7rXZDTYj5SGTycJE8wMu4Fc",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZXBhdHJvbC5uZXJhLXNlYS5jb21cL2FwaVwvdjFcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjEzNzYyNTIyLCJuYmYiOjE2MTM3NjI1MjIsImp0aSI6Ik9wTzVDb0ZSTWJkaXpZWnIiLCJzdWIiOjQsInBydiI6ImE5NTk2NzhlYjczZDc2ODYwYWVlYWY5ODlkNTU2MWUwNzNlMWU3OGUifQ.fgqQ7dex0SCrFRuHSQp8DrYBz7hk7ZekzBQIZY_tFoU",
 				"type": "string"
 			}
 		]
@@ -1408,7 +1690,7 @@
 	"variable": [
 		{
 			"key": "BASE_URL",
-			"value": "http://103.153.2.35:8080"
+			"value": "https://epatrol.nera-sea.com"
 		},
 		{
 			"key": "BASE_URL_LOKAL",
