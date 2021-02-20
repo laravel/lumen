@@ -12,7 +12,7 @@ class SecurityScheduleController extends Controller
 {
     /**
      * Get Security Schedule data
-     * GET api/v1/owner/security/schedule/
+     * GET api/v1/owner/security-schedule
      * @param id
      * @return Response
      **/
@@ -32,7 +32,7 @@ class SecurityScheduleController extends Controller
 
     /**
      * Create new Security Schedule
-     * POST api/v1/owner/security/schedule/store
+     * POST api/v1/owner/security-schedule/store
      * @param Request id_security_plan
      * @param Request id_site_schedule
      * @return Response
@@ -66,7 +66,7 @@ class SecurityScheduleController extends Controller
 
     /**
      * Update Security Schedule
-     * PUT api/v1/owner/security/schedule/update
+     * PUT api/v1/owner/security-schedule/update
      * @param id
      * @param Request id_security_plan
      * @param Request id_site_schedule
@@ -102,7 +102,7 @@ class SecurityScheduleController extends Controller
 
     /**
      * Delete Security Schedule
-     * DELETE api/v1/owner/security/schedule/store
+     * DELETE api/v1/owner/security-schedule/store
      * @param id
      **/
     public function deleteSecuritySchedule($id)
