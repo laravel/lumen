@@ -103,6 +103,22 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
             $router->put('/update/{id}', ['uses' => 'SiteController@updateSite', 'as' => 'owner.site.updateSite']);
             $router->delete('/delete/{id}', ['uses' => 'SiteController@deleteSite', 'as' => 'owner.site.deleteSite']);
         });
+
+        $router->group(['prefix' => 'schedule'], function () use ($router) {
+            $router->get('/', ['uses' => 'ScheduleController@index', 'as' => 'owner.schedule.index']);
+            $router->get('/{id}', ['uses' => 'ScheduleController@index', 'as' => 'owner.schedule.index']);
+            $router->post('/store', ['uses' => 'ScheduleController@storeSchedule', 'as' => 'owner.schedule.storeSchedule']);
+            $router->put('/update/{id}', ['uses' => 'ScheduleController@updateSchedule', 'as' => 'owner.schedule.updateSchedule']);
+            $router->delete('/delete/{id}', ['uses' => 'ScheduleController@deleteSchedule', 'as' => 'owner.schedule.deleteSchedule']);
+        });
+
+        $router->group(['prefix' => 'corporate'], function () use ($router) {
+            $router->get('/', ['uses' => 'CorporateController@index', 'as' => 'owner.corporate.index']);
+            $router->get('/{id}', ['uses' => 'CorporateController@index', 'as' => 'owner.corporate.index']);
+            $router->post('/store', ['uses' => 'CorporateController@storeCorporate', 'as' => 'owner.corporate.storeCorporate']);
+            $router->put('/update/{id}', ['uses' => 'CorporateController@updateCorporate', 'as' => 'owner.corporate.updateCorporate']);
+            $router->delete('/delete/{id}', ['uses' => 'CorporateController@deleteCorporate', 'as' => 'owner.corporate.deleteCorporate']);
+        });
     });
 });
 

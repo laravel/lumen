@@ -14,4 +14,9 @@ class Corporate extends Model
     {
     	return $this->hasMany('App\Models\v1\Site', 'id_corporate', 'id');
     }
+
+    public function customer()
+    {
+    	return $this->hasMany('App\Models\v1\Customer', 'id_corporate', 'id');
+    }
 }

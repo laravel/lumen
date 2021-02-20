@@ -43,14 +43,15 @@ class SecurityController extends Controller
         try
         {
             $validator = Validator::make($request->post(), [
-                'id_people' => 'required'
+                'id_people' => 'required',
+                'security_number' => 'required'
             ]);
 
             if (! $validator->fails())
             {
                 $new_security = new Security;
                 $new_security->id_people = $request->id_people;
-                $new_security->id_supervisor = $request->id_supervisor;
+                $new_security->id_supervisor = $request->id_supervisor ? $request->id_supervisor : NULL;
                 $new_security->security_number = $request->security_number;
                 $new_security->save();
 
@@ -70,6 +71,7 @@ class SecurityController extends Controller
      * PUT api/v1/owner/security/update
      * @param id
      * @param Request id_supervisor
+     * @param Request security_number
      * @return Response
      **/
     public function updateSecurity(Request $request, $id)
@@ -77,14 +79,14 @@ class SecurityController extends Controller
         try
         {
             $validator = Validator::make($request->post(), [
-                'id_supervisor' => 'required',
                 'security_number' => 'required'
             ]);
 
             if (! $validator->fails())
             {
                 $new_security = Security::find($id);
-                $new_security->id_supervisor = $request->id_supervisor;
+                $new_security->id_people = $request->id_people;
+                $new_security->id_supervisor = $request->id_supervisor ? $request->id_supervisor : $new_security->id_supervisor;
                 $new_security->security_number = $request->security_number;
                 $new_security->save();
 
