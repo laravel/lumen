@@ -284,7 +284,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/",
+									"raw": "{{BASE_URL}}/api/v1/owner/security-schedule/",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -292,8 +292,7 @@
 										"api",
 										"v1",
 										"owner",
-										"security",
-										"schedule",
+										"security-schedule",
 										""
 									]
 								}
@@ -306,7 +305,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/1",
+									"raw": "{{BASE_URL}}/api/v1/owner/security-schedule/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -314,8 +313,7 @@
 										"api",
 										"v1",
 										"owner",
-										"security",
-										"schedule",
+										"security-schedule",
 										"1"
 									]
 								}
@@ -343,7 +341,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/store",
+									"raw": "{{BASE_URL}}/api/v1/owner/security-schedule/store",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -351,8 +349,7 @@
 										"api",
 										"v1",
 										"owner",
-										"security",
-										"schedule",
+										"security-schedule",
 										"store"
 									]
 								}
@@ -380,7 +377,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/update/1",
+									"raw": "{{BASE_URL}}/api/v1/owner/security-schedule/update/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -388,8 +385,7 @@
 										"api",
 										"v1",
 										"owner",
-										"security",
-										"schedule",
+										"security-schedule",
 										"update",
 										"1"
 									]
@@ -403,7 +399,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/security/schedule/delete/2",
+									"raw": "{{BASE_URL}}/api/v1/owner/security-schedule/delete/2",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -411,8 +407,7 @@
 										"api",
 										"v1",
 										"owner",
-										"security",
-										"schedule",
+										"security-schedule",
 										"delete",
 										"2"
 									]
@@ -945,6 +940,28 @@
 							"response": []
 						},
 						{
+							"name": "Get Site By Id Company",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site/company/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site",
+										"company",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Add Site",
 							"request": {
 								"method": "POST",
@@ -1085,7 +1102,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule",
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -1093,8 +1110,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
-										"schedule"
+										"site-schedule"
 									]
 								}
 							},
@@ -1106,7 +1122,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/2",
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule/1",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -1114,8 +1130,29 @@
 										"api",
 										"v1",
 										"owner",
+										"site-schedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Site Schedule By Id Site",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule/site/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"site-schedule",
 										"site",
-										"schedule",
 										"2"
 									]
 								}
@@ -1143,7 +1180,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/store",
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule/store",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -1151,8 +1188,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
-										"schedule",
+										"site-schedule",
 										"store"
 									]
 								}
@@ -1175,7 +1211,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/update/4",
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule/update/4",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -1183,8 +1219,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
-										"schedule",
+										"site-schedule",
 										"update",
 										"4"
 									]
@@ -1198,7 +1233,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v1/owner/site/schedule/delete/5",
+									"raw": "{{BASE_URL}}/api/v1/owner/site-schedule/delete/5",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -1206,8 +1241,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
-										"schedule",
+										"site-schedule",
 										"delete",
 										"5"
 									]
@@ -1508,11 +1542,204 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Checkpoint",
+					"item": [
+						{
+							"name": "Get Checkpoint",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Checkpoint By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Checkpoint By Id Site",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint/site/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint",
+										"site",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Checkpoint",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_site",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Chekpoint A",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "test detail",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "166",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Checkpoint",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_site",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "sadsad",
+											"type": "text"
+										},
+										{
+											"key": "detail",
+											"value": "asdasd",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "33",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint/update/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Checkpoint",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/checkpoint/delete/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"checkpoint",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "TEST LOKAL",
+			"name": "TEST LOKAL (TIDAK DIPAKAI)",
 			"item": [
 				{
 					"name": "Auth",
@@ -1643,7 +1870,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1651,7 +1878,7 @@
 										"api",
 										"v1",
 										"owner",
-										"corporate"
+										"site"
 									]
 								}
 							},

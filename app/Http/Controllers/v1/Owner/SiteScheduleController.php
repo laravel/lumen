@@ -13,7 +13,7 @@ class SiteScheduleController extends Controller
 {
     /**
      * Get site schedule data
-     * GET api/v1/owner/site/schedule
+     * GET api/v1/owner/site-schedule
      * @param id
      * @return Response
      **/
@@ -32,8 +32,28 @@ class SiteScheduleController extends Controller
 	}
 
     /**
+     * Get site schedule data by site
+     * GET api/v1/owner/site-schedule/site
+     * @param id
+     * @return Response
+     **/
+	public function indexBySite($id)
+	{
+        try
+        {
+            $site_schedule = SiteSchedule::where('id_site', $id)->get();
+
+            return $this->respHandler->success('Success get data.', $site_schedule);
+        }
+        catch(\Exception $e)
+        {
+            return $this->respHandler->requestError($e->getMessage());
+        }
+	}
+
+    /**
      * Create new site schedule
-     * POST api/v1/owner/site/schedule/store
+     * POST api/v1/owner/site-schedule/store
      * @param Request id_site
      * @param Request id_schedule
      * @return Response
@@ -67,7 +87,7 @@ class SiteScheduleController extends Controller
 
     /**
      * Update site schedule
-     * PUT api/v1/owner/site/schedule/update
+     * PUT api/v1/owner/site-schedule/update
      * @param id
      * @param Request id_schedule
      * @return Response
@@ -99,7 +119,7 @@ class SiteScheduleController extends Controller
 
     /**
      * Delete site schedule
-     * DELETE api/v1/owner/site/schedule/delete
+     * DELETE api/v1/owner/site-schedule/delete
      * @param id
      **/
     public function deleteSiteSchedule($id)

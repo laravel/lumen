@@ -32,6 +32,26 @@ class SiteController extends Controller
 	}
 
     /**
+     * Get site data by company
+     * GET api/v1/owner/site/company
+     * @param id
+     * @return Response
+     **/
+	public function indexByCompany($id)
+	{
+        try
+        {
+            $site = Site::where('id_corporate', $id)->get();
+
+            return $this->respHandler->success('Success get data.', $site);
+        }
+        catch(\Exception $e)
+        {
+            return $this->respHandler->requestError($e->getMessage());
+        }
+	}
+
+    /**
      * Create new site
      * POST api/v1/owner/site/store
      * @param Request id_corporate
@@ -50,7 +70,6 @@ class SiteController extends Controller
                 'id_corporate' => 'required',
                 'name' => 'required',
                 'address' => 'required',
-                'detail' => 'required',
                 'lat' => 'required',
                 'long' => 'required',
             ]);
