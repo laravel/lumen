@@ -180,7 +180,23 @@
 								"header": [],
 								"body": {
 									"mode": "urlencoded",
-									"urlencoded": []
+									"urlencoded": [
+										{
+											"key": "id_people",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id_supervisor",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "security_number",
+											"value": "9018230913",
+											"type": "text"
+										}
+									]
 								},
 								"url": {
 									"raw": "{{BASE_URL}}/api/v1/owner/security/store",
@@ -204,8 +220,8 @@
 								"method": "PUT",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"mode": "urlencoded",
+									"urlencoded": [
 										{
 											"key": "id_supervisor",
 											"value": "2",
@@ -214,11 +230,6 @@
 										{
 											"key": "security_number",
 											"value": "14567845381670",
-											"type": "text"
-										},
-										{
-											"key": "id",
-											"value": "4",
 											"type": "text"
 										}
 									]
@@ -317,8 +328,8 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
+									"mode": "urlencoded",
+									"urlencoded": [
 										{
 											"key": "id_security_plan",
 											"value": "1",
@@ -354,13 +365,8 @@
 								"method": "PUT",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "id",
-											"value": "3",
-											"type": "text"
-										},
+									"mode": "urlencoded",
+									"urlencoded": [
 										{
 											"key": "id_security_plan",
 											"value": "2",
@@ -515,11 +521,6 @@
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
-										{
-											"key": "id",
-											"value": "1",
-											"type": "text"
-										},
 										{
 											"key": "username",
 											"value": "Elienzs",
@@ -685,6 +686,41 @@
 							"request": {
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "asd",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "jalan ga tau",
+											"type": "text"
+										},
+										{
+											"key": "phone_address",
+											"value": "123123123",
+											"type": "text"
+										},
+										{
+											"key": "birthdate",
+											"value": "12-09-2021",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "sex",
+											"value": "M",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
 									"raw": "{{BASE_URL}}/api/v1/owner/people/update/1",
 									"host": [
@@ -1180,6 +1216,298 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Schedule",
+					"item": [
+						{
+							"name": "Get Schedule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/schedule",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"schedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Schedule By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/schedule/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"schedule",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Schedule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "day",
+											"value": "Senin",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "12:00:00",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "15:00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/schedule/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"schedule",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Schedule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "day",
+											"value": "Selasa",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "15:00:00",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "18:00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/schedule/update/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"schedule",
+										"update",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Schedule",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/schedule/delete/8",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"schedule",
+										"delete",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Corporate",
+					"item": [
+						{
+							"name": "Get Corporate",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/corporate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"corporate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Corporate By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/corporate/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"corporate",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Corporate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "PT Epatrol Sejahtera",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jalan Ketintang Raya",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/corporate/store",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"corporate",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Corporate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "PT Ketintang Test",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jalan Raya Kuman",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/corporate/update/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"corporate",
+										"update",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Corporate",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/owner/corporate/delete/6",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"owner",
+										"corporate",
+										"delete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -1307,15 +1635,15 @@
 					]
 				},
 				{
-					"name": "Site",
+					"name": "Corporate",
 					"item": [
 						{
-							"name": "Get Site",
+							"name": "Get Corporate",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1323,20 +1651,19 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
-										""
+										"corporate"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Get Site By Id",
+							"name": "Get Corporate By Id",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/2",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate/2",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1344,7 +1671,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
+										"corporate",
 										"2"
 									]
 								}
@@ -1352,47 +1679,27 @@
 							"response": []
 						},
 						{
-							"name": "Add Site",
+							"name": "Add Corporate",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
-										{
-											"key": "id_corporate",
-											"value": "2",
-											"type": "text"
-										},
 										{
 											"key": "name",
-											"value": "Site 1",
+											"value": "PT Epatrol Sejahtera",
 											"type": "text"
 										},
 										{
 											"key": "address",
-											"value": "Site 1 Address",
-											"type": "text"
-										},
-										{
-											"key": "detail",
-											"value": "Tidak ada detail",
-											"type": "text"
-										},
-										{
-											"key": "lat",
-											"value": "109",
-											"type": "text"
-										},
-										{
-											"key": "long",
-											"value": "99",
+											"value": "Jalan Ketintang Raya",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/store",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate/store",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1400,7 +1707,7 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
+										"corporate",
 										"store"
 									]
 								}
@@ -1408,7 +1715,7 @@
 							"response": []
 						},
 						{
-							"name": "Update Site",
+							"name": "Update Corporate",
 							"request": {
 								"method": "PUT",
 								"header": [],
@@ -1416,34 +1723,19 @@
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
-											"key": "id_corporate",
-											"value": "1",
+											"key": "name",
+											"value": "PT Ketintang Test",
 											"type": "text"
 										},
 										{
 											"key": "address",
-											"value": "Test Site Dua Puluh",
-											"type": "text"
-										},
-										{
-											"key": "detail",
-											"value": "Tidak ada detail",
-											"type": "text"
-										},
-										{
-											"key": "lat",
-											"value": "888",
-											"type": "text"
-										},
-										{
-											"key": "long",
-											"value": "999",
+											"value": "Jalan Raya Kuman",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/update/4",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate/update/6",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1451,21 +1743,21 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
+										"corporate",
 										"update",
-										"4"
+										"6"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Delete Site",
+							"name": "Delete Corporate",
 							"request": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/delete/5",
+									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/corporate/delete/6",
 									"host": [
 										"{{BASE_URL_LOKAL}}"
 									],
@@ -1473,150 +1765,9 @@
 										"api",
 										"v1",
 										"owner",
-										"site",
+										"corporate",
 										"delete",
-										"5"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Site Schedule",
-					"item": [
-						{
-							"name": "Get Site Schedule",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule",
-									"host": [
-										"{{BASE_URL_LOKAL}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"owner",
-										"site",
-										"schedule"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Site Schedule By Id",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/2",
-									"host": [
-										"{{BASE_URL_LOKAL}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"owner",
-										"site",
-										"schedule",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Add Site Schedule",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "id_site",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "id_schedule",
-											"value": "1",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/store",
-									"host": [
-										"{{BASE_URL_LOKAL}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"owner",
-										"site",
-										"schedule",
-										"store"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update Site Schedule",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "id_schedule",
-											"value": "2",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/update/2",
-									"host": [
-										"{{BASE_URL_LOKAL}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"owner",
-										"site",
-										"schedule",
-										"update",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Site Schedule",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_LOKAL}}/api/v1/owner/site/schedule/delete/2",
-									"host": [
-										"{{BASE_URL_LOKAL}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"owner",
-										"site",
-										"schedule",
-										"delete",
-										"2"
+										"6"
 									]
 								}
 							},
