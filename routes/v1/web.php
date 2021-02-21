@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 // API v1 Auth
-$router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function () use ($router) {
         $router->post('/login', ['uses' => 'AuthController@login', 'as' => 'auth.auth.login']);
         
@@ -31,7 +31,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
 });
 
 // API v1 Security
-$router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'security', 'namespace' => 'Security', 'middleware' => 'auth:api'], function () use ($router) {
         $router->group(['prefix' => 'report'], function () use ($router) {
             $router->get('/', ['uses' => 'ReportController@index', 'as' => 'security.report.index']);
@@ -46,7 +46,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
 });
 
 // API v1 Owner
-$router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Owner', 'middleware' => 'auth:api'], function () use ($router) {
         $router->group(['prefix' => 'security-schedule'], function () use ($router) {
             $router->get('/', ['uses' => 'SecurityScheduleController@index', 'as' => 'owner.security-schedule.index']);
@@ -134,7 +134,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use (
 });
 
 // API v1 Client
-$router->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->group(['prefix' => 'owner', 'namespace' => 'Client', 'middleware' => 'auth:api'], function () use ($router) {
         // Code start from here
     });

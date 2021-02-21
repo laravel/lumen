@@ -61,6 +61,7 @@ $app->singleton(
 
 $app->configure('app');
 $app->configure('jwt');
+$app->configure('cors');
 
 /*
 |--------------------------------------------------------------------------
@@ -81,8 +82,8 @@ $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
 ]);
 
-$app->routeMiddleware([
-    'cors' => App\Http\Middleware\Cors::class,
+$app->middleware([
+    Fruitcake\Cors\HandleCors::class,
 ]);
 
 /*
@@ -101,6 +102,7 @@ $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(Chuckrincon\LumenConfigDiscover\DiscoverServiceProvider::class);
+$app->register(Fruitcake\Cors\CorsServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
