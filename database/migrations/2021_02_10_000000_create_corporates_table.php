@@ -18,6 +18,8 @@ class CreateCorporatesTable extends Migration
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->tinyInteger('is_owner')->default('0');
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
