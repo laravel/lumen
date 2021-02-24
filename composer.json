@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.3|^8.0",
+        "gravitylending/mass": "*",
         "laravel/lumen-framework": "^8.0"
     },
     "require-dev": {
@@ -36,5 +37,14 @@
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
+    },
+    "repositories": {
+        "mass": {
+            "type": "path",
+            "url": "packages/gravitylending/mass",
+            "options": {
+                "symlink": true
+            }
+        }
     }
 }
