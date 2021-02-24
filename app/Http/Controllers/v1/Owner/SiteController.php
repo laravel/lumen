@@ -109,8 +109,6 @@ class SiteController extends Controller
         {
             $validator = Validator::make($request->post(), [
                 'id_corporate' => 'required',
-                'lat' => 'required',
-                'long' => 'required',
             ]);
 
             if (! $validator->fails())
@@ -120,8 +118,8 @@ class SiteController extends Controller
                 $site->name = $request->name ? $request->name : $site->name;
                 $site->address = $request->address ? $request->address : $site->address;
                 $site->detail = $request->detail ? $request->detail : $site->detail;
-                $site->lat = $request->lat;
-                $site->long = $request->long;
+                $site->lat = $request->lat ? $request->lat : $site->lat;
+                $site->long = $request->long ? $request->long : $site->long;
                 $site->save();
 
                 return $this->respHandler->success('Site has been updated.', $site);

@@ -86,8 +86,6 @@ class CorporateController extends Controller
             $validator = Validator::make($request->post(), [
                 'name' => 'required',
                 'address' => 'required',
-                'lat' => 'required',
-                'long' => 'required',
             ]);
 
             if (! $validator->fails())
@@ -95,8 +93,8 @@ class CorporateController extends Controller
                 $corporate = Corporate::find($id);
                 $corporate->name = $request->name;
                 $corporate->address = $request->address;
-                $corporate->lat = $request->lat;
-                $corporate->long = $request->long;
+                $corporate->lat = $request->lat ? $request->lat : $corporate->lat;
+                $corporate->long = $request->long ? $request->long : $corporate->long;
                 $corporate->save();
 
                 return $this->respHandler->success('Corporate has been updated.', $corporate);
