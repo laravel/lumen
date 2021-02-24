@@ -106,8 +106,6 @@ class CheckpointController extends Controller
         {
             $validator = Validator::make($request->post(), [
                 'id_site' => 'required',
-                'lat' => 'required',
-                'long' => 'required',
             ]);
 
             if (! $validator->fails())
@@ -116,8 +114,8 @@ class CheckpointController extends Controller
                 $checkpoint->id_site = $request->id_site;
                 $checkpoint->name = $request->name ? $request->name : $site->name;
                 $checkpoint->detail = $request->detail ? $request->detail : $site->detail;
-                $checkpoint->lat = $request->lat;
-                $checkpoint->long = $request->long;
+                $checkpoint->lat = $request->lat ? $request->lat : $checkpoint->lat;
+                $checkpoint->long = $request->long ? $request->long : $checkpoint->long;
                 $checkpoint->save();
 
                 return $this->respHandler->success('Checkpoint has been updated.', $checkpoint);
