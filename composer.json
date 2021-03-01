@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": "^7.3|^8.0",
-        "gravitylending/mass": "*",
-        "laravel/lumen-framework": "^8.0"
+        "laravel/lumen-framework": "^8.0",
+        "gravitylending/mass": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

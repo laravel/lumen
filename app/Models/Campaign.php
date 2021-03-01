@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use GravityLending\Mass\Models\Massive;
 use GravityLending\Mass\Http\Traits\HasFile;
 use GravityLending\Mass\Http\Traits\HasRoutes;
 
-class Campaign extends Model
+class Campaign extends Massive
 {
     use HasFile, HasRoutes;
 
@@ -22,8 +22,10 @@ class Campaign extends Model
      *
      * @var array
      */
-    public static $routes = ['index', 'show']; // todo
-    // todo: vars to bind for routes
+     public static $routing = [
+         'resource' => 'campaigns',
+         'methods' => ['index', 'show']
+     ];
 
     /**
      * The properties for HasFile trait
@@ -59,7 +61,7 @@ class Campaign extends Model
         'name' => 'required|string|unique:campaigns',
         'expired_at' => 'required|date_format:Y-m-d H:i:s',  // todo: after_or_equal:date
         'campaign_type_id' => 'required|exists:campaign_types',
-        'file' => 'required|mimes:csv|max:2048', // todo: generate w/HasFile
+        'file' => 'required|mimes:csv|max:2048',
     ];
 
     /**

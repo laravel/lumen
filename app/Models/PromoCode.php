@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use GravityLending\Mass\Models\Massive;
 use GravityLending\Mass\Http\Traits\HasRoutes;
 
-class PromoCode extends Model
+class PromoCode extends Massive
 {
     use HasRoutes;
 
@@ -36,6 +36,8 @@ class PromoCode extends Model
         'total_revenue',
         'campaign_id',
     ];
+
+    public static $routing = ['resource' => 'promos'];
 
     /**
      * The validation rules for requests

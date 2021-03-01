@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace GravityLending\Mass\Providers;
 
-
-use GravityLending\Mass\Exceptions\ApiHandler;
-use GravityLending\Mass\Http\Controllers\ApiController;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Support\Facades\Route;
+use GravityLending\Mass\Http\Middleware\RouteMiddleware;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Lumen\Routing\Router;
+use GravityLending\Mass\Console\MassiveRoutesCommand;
+use GravityLending\Mass\Exceptions\ApiHandler;
 
 class MassServiceProvider extends ServiceProvider
 {
@@ -38,51 +36,26 @@ class MassServiceProvider extends ServiceProvider
     public function register()
     {
         $this->publishes([__DIR__ . '/config/mass.php' => $this->app->configPath('mass.php')]);
-        $this->app->register(RouteServiceProvider::class);
-//        $this->commands('Appzcoder\LumenRoutesList\RoutesCommand');
+        $this->app->routeMiddleware([
+            'massive' => RouteMiddleware::class,
+        ]);
     }
 
     /**
      * Bootstrap services.
      *
+     * @param Filesystem $files
      * @return void
      */
-//    public function boot(Router $route)
-    public function boot()
+    public function boot(Filesystem $files)
     {
-
-//        dd(dirname(__FILE__) . './routes.php');
-
-//        $this->loadRoutesFrom(dirname(__DIR__, 1) . '/routes.php');
-//        $route->get('rrrr', function(){
-//            dd('sdfdsfdsf');
-//        });
-
-
-//        Route::apiResource('types',ApiController::class)
-//            ->names('CampaignType')
-//            ->parameters(['types' => 'campaign_type:id']);
-//
-//        Route::apiResource('promos',ApiController::class)
-//            ->names('PromoCode')
-//            ->parameters(['promos' => 'promo_code:id']);
-//
-//        Route::apiResource('campaigns',ApiController::class)
-//            ->names('Campaign')
-//            ->parameters(['campaigns' => 'campaign_id:id']);
-
-
-//        $router->group([], function () {
-//
-//        }):
-
-//        $router->group();
-
-//        Route::get('test', function() {
-//            return 'test';
-//        });
-//        $this->app-
-//        $this->loadRoutesFrom(__DIR__ . '../routes.php');
+        if ($this->app->runningInConsole()) {
+            $this->commands(MassiveRoutesCommand::class);
+        }
+        $routeFile = 'routes/massive.php';
+        if($files->exists(base_path($routeFile))){
+            $this->loadRoutesFrom(base_path($routeFile));
+        };
     }
 
     /**
@@ -92,6 +65,6 @@ class MassServiceProvider extends ServiceProvider
      */
     public function provides() : array
     {
-        return [];
+        return ['mass'];
     }
 }

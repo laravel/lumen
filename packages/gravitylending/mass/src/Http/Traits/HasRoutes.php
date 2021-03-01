@@ -7,5 +7,5 @@ namespace GravityLending\Mass\Http\Traits;
 
 trait HasRoutes
 {
-    public static $routes = ['*'];
+
 }

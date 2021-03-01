@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use GravityLending\Mass\Models\Massive;
 use GravityLending\Mass\Http\Traits\HasRoutes;
 
-class CampaignType extends Model
+class CampaignType extends Massive
 {
     use HasRoutes;
 
@@ -15,6 +15,8 @@ class CampaignType extends Model
      * @var string
      */
     protected $table = 'campaign_types';
+
+    public static $routing = ['resource' => 'types'];
 
     /**
      * The attributes that are mass assignable.

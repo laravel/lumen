@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 trait HasFile
 {
-    protected $fileProperties = [];
     protected $fileNameField = 'file_name';
 
     public static function bootHasFile()
