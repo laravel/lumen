@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use GravityLending\Mass\Models\Massive;
-use GravityLending\Mass\Http\Traits\HasFile;
-use GravityLending\Mass\Http\Traits\HasRoutes;
+use GravityLending\Mass\Http\Traits\{HasRoutes, HasFile};
 
 class Campaign extends Massive
 {
@@ -16,16 +15,6 @@ class Campaign extends Massive
      * @var string
      */
     protected $table = 'campaigns';
-
-    /**
-     * The route properties for HasRoutes trait
-     *
-     * @var array
-     */
-     public static $routing = [
-         'resource' => 'campaigns',
-         'methods' => ['index', 'show']
-     ];
 
     /**
      * The properties for HasFile trait

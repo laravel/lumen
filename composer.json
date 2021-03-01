@@ -40,11 +40,8 @@
     },
     "repositories": {
         "mass": {
-            "type": "path",
-            "url": "packages/gravitylending/mass",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/GravityLending/Mass"
         }
     }
 }

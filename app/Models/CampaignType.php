@@ -16,7 +16,12 @@ class CampaignType extends Massive
      */
     protected $table = 'campaign_types';
 
-    public static $routing = ['resource' => 'types'];
+    /**
+     * The route properties for HasRoutes trait
+     *
+     * @var array
+     */
+    public static $routing = ['resource' => 'type'];
 
     /**
      * The attributes that are mass assignable.

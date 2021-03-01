@@ -17,6 +17,13 @@ class PromoCode extends Massive
     protected $table = 'promocodes';
 
     /**
+     * The route properties for HasRoutes trait
+     *
+     * @var array
+     */
+    public static $routing = ['resource' => 'promo'];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -36,8 +43,6 @@ class PromoCode extends Massive
         'total_revenue',
         'campaign_id',
     ];
-
-    public static $routing = ['resource' => 'promos'];
 
     /**
      * The validation rules for requests
