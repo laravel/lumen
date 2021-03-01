@@ -80,7 +80,6 @@ $app->configure('app');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
-
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
