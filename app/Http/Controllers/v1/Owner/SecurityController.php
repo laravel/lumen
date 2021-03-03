@@ -20,7 +20,7 @@ class SecurityController extends Controller
 	{
         try
         {
-            $security = $id ? Security::find($id) : Security::get();
+            $security = $id ? Security::with('people')->find($id) : Security::with('people')->get();
 
             return $this->respHandler->success('Success get data.', $security);
         }
