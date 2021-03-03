@@ -75,9 +75,9 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
         $router->group(['prefix' => 'people'], function () use ($router) {
             $router->get('/', ['uses' => 'PeopleController@index', 'as' => 'owner.people.index']);
             $router->get('/{id}', ['uses' => 'PeopleController@index', 'as' => 'owner.people.index']);
-            $router->post('/store', ['uses' => 'PeopleController@storeSecurity', 'as' => 'owner.people.storeSecurity']);
-            $router->put('/update/{id}', ['uses' => 'PeopleController@updateSecurity', 'as' => 'owner.people.updateSecurity']);
-            $router->delete('/delete/{id}', ['uses' => 'PeopleController@deleteSecurity', 'as' => 'owner.people.deleteSecurity']);
+            $router->post('/store', ['uses' => 'PeopleController@storePeople', 'as' => 'owner.people.storePeople']);
+            $router->put('/update/{id}', ['uses' => 'PeopleController@updatePeople', 'as' => 'owner.people.updatePeople']);
+            $router->delete('/delete/{id}', ['uses' => 'PeopleController@deletePeople', 'as' => 'owner.people.deletePeople']);
         });
 
         $router->group(['prefix' => 'customer'], function () use ($router) {

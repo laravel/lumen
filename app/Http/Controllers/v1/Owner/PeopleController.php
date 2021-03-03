@@ -126,7 +126,7 @@ class PeopleController extends Controller
      * DELETE api/v1/owner/people/delete
      * @param id
      **/
-    public function deleteUser($id)
+    public function deletePeople($id)
 	{
         try
         {
