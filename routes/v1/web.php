@@ -130,6 +130,14 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
             $router->put('/update/{id}', ['uses' => 'CheckpointController@updateCheckpoint', 'as' => 'owner.checkpoint.updateCheckpoint']);
             $router->delete('/delete/{id}', ['uses' => 'CheckpointController@deleteCheckpoint', 'as' => 'owner.checkpoint.deleteCheckpoint']);
         });
+
+        $router->group(['prefix' => 'map'], function () use ($router) {
+            $router->get('/', ['uses' => 'MapController@index', 'as' => 'owner.map.index']);
+            $router->get('/{id}', ['uses' => 'MapController@index', 'as' => 'owner.map.index']);
+            $router->post('/store', ['uses' => 'MapController@storeMap', 'as' => 'owner.map.storeMap']);
+            $router->put('/update/{id}', ['uses' => 'MapController@updateMap', 'as' => 'owner.map.updateMap']);
+            $router->delete('/delete/{id}', ['uses' => 'MapController@deleteMap', 'as' => 'owner.map.deleteMap']);
+        });
     });
 });
 
