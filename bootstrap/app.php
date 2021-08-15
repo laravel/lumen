@@ -23,6 +23,8 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
+$app->configure('app');
+
 // $app->withFacades();
 
 // $app->withEloquent();
