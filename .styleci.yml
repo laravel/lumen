@@ -1,6 +1,5 @@
 php:
   preset: laravel
-  version: 8.1
   disabled:
     - unused_use
 js: true
