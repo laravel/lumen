@@ -5,8 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.1",
-        "laravel/lumen-framework": "^10.0"
+        "php": "^8.2",
+        "laravel/lumen-framework": "^11.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -35,6 +35,6 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
