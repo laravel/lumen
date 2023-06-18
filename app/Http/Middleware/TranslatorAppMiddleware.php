@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ExampleMiddleware
+class TranslatorAppMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,7 @@ class ExampleMiddleware
      */
     public function handle($request, Closure $next)
     {
+        app('translator')->setLocale(env('Lang'));
         return $next($request);
     }
 }

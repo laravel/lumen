@@ -6,7 +6,12 @@
     "type": "project",
     "require": {
         "php": "^8.1",
-        "laravel/lumen-framework": "^10.0"
+        "flipbox/lumen-generator": "^9.2",
+        "google/apiclient": "^2.15",
+        "illuminate/mail": "^10.13",
+        "illuminate/redis": "^10.13",
+        "laravel/lumen-framework": "^10.0",
+        "predis/predis": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

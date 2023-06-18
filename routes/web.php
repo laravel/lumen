@@ -16,3 +16,12 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// 第三方平台联合登录
+$router->group(['prefix' => 'login'], function () use ($router) {
+    $router->post('email', 'LoginController@email');
+    $router->post('email_code', 'LoginController@emailCode');
+
+    $router->get('gg', 'LoginController@googleBack');
+    $router->get('ff', 'LoginController@facebookBack');
+});
