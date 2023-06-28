@@ -6,12 +6,16 @@
     "type": "project",
     "require": {
         "php": "^8.1",
+        "alphasnow/aliyun-oss-laravel": "^4.7",
+        "firebase/php-jwt": "^6.7",
         "flipbox/lumen-generator": "^9.2",
-        "google/apiclient": "^2.15",
         "illuminate/mail": "^10.13",
         "illuminate/redis": "^10.13",
         "laravel/lumen-framework": "^10.0",
-        "predis/predis": "^2.2"
+        "paypal/paypal-checkout-sdk": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "predis/predis": "^2.2",
+        "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -23,7 +27,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

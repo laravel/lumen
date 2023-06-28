@@ -73,10 +73,6 @@ $app->configure('app');
 |
 */
 
- $app->middleware([
-     App\Http\Middleware\TranslatorAppMiddleware::class,
- ]);
-
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
@@ -98,6 +94,7 @@ $app->configure('app');
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(\Illuminate\Mail\MailServiceProvider::class);
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+$app->register(SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

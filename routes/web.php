@@ -25,3 +25,13 @@ $router->group(['prefix' => 'login'], function () use ($router) {
     $router->get('gg', 'LoginController@googleBack');
     $router->get('ff', 'LoginController@facebookBack');
 });
+
+// 个人中心
+$router->group(['prefix' => 'user'], function() use ($router) {
+    $router->post('personal', 'PersonalController@personalInfo');
+    $router->post('bill', 'PersonalController@billInfo');
+    $router->post('import', 'PersonalController@importData');
+    $router->post('pay', 'PersonalController@pay');
+    $router->post('pay_return', 'PersonalController@payReturn');
+
+});
