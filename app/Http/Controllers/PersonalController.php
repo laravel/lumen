@@ -277,7 +277,6 @@ class PersonalController extends Controller
                 $client = new PayPalHttpClient(new SandboxEnvironment(env('PAYPEL_UAT_CLIENT_ID'), env('PAYPEL_UAT_SECRET')));
             }
             $response = $client->execute($order_request);
-
             return response()->json($response, 200);
 
         } catch (\Exception $ex) {
@@ -302,6 +301,7 @@ class PersonalController extends Controller
 
             if ($response->result->status == 'COMPLETED') {
                 // 写入订单表
+                // 写入用户信息表
                 return response()->json(['response' => $response], 200);
             }
             return response()->json(['message' => 'Something went wrong'], 500);
